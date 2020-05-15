@@ -6,6 +6,7 @@ class Report extends CI_Controller {
         parent::__construct();
         $this->load->model('M_EquipDef');
         $this->load->model('M_EquipVal');
+        $this->load->library('Pdf');
 
         $this->jumlah_data = 720; //total data untuk 1 jam dengan interval 5 detik
 
@@ -19,41 +20,7 @@ class Report extends CI_Controller {
 
     public function index()
     {
-
-        for($i = 7; $i <= 19; $i++){
-            $array[$i]['Fce Combustion'] = 'abc';
-            $array[$i]['Fce Outlet Sand'] = 'abc';
-            $array[$i]['Fce Inlet Sand'] = 'abc';
-            $array[$i]['Top Temp. Fce'] = 'abc';
-            $array[$i]['PressureBlank'] = '';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['Pressure'] = 'abc';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['Pressure'] = 'abc';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['Speed Screw Feeder'] = 'abc';
-            $array[$i]['Pressure'] = 'abc';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['Pressure'] = 'abc';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['Nozzle No. 1'] = 'abc';
-            $array[$i]['Nozzle No. 2'] = 'abc';
-            $array[$i]['Nozzle No. 3'] = 'abc';
-            $array[$i]['Temp. No. 1'] = 'abc';
-            $array[$i]['Temp. No. 2'] = 'abc';
-            $array[$i]['Damper Open'] = 'abc';
-            $array[$i]['DC Inlet Temp. (T10b)'] = 'abc';
-        }
-
-        print_r($array);
-        exit;
-
-
-        $data['clock'] = $array;
-        $data['arrayMaster'] = $clock;
-
-        $this->load->view('reporting/index',$data);
+        $this->load->view('reporting/index');
     }
 
     public function daily_report()
@@ -61,6 +28,8 @@ class Report extends CI_Controller {
 
         if($_POST)
         {
+
+            
             $result = array();
 
             $shift = $this->input->post('shift');
@@ -115,11 +84,11 @@ class Report extends CI_Controller {
                     if(substr($data->clock,11,2) == $row){
 
                         if($data->equipDesc == 'Fce Combustion Temperature Sensor'){
-                            $dataSatuan['Fce Combustion'] = $data->temp;
+                            $dataSatuan['Fce Combustion'] = round($data->temp,2);
 
                         }elseif($data->equipDesc == 'Fce Outlet Sand Temperature Sensor'){
                             
-                            $dataSatuan['Fce Outlet Sand'] = $data->temp;
+                            $dataSatuan['Fce Outlet Sand'] = round($data->temp,2);
                         }
 
                     } 
@@ -130,15 +99,12 @@ class Report extends CI_Controller {
                 $dataku[] = $dataSatuan;
 
             }
-            print_r($dataku);
-
-            //print_r($datas);
-            
-            //exit;
+            // print_r($dataku);
+            // exit;
             //$data['clock'] = $array;
             $lepar['arrayMaster'] = $dataku;
     
-            $this->load->view('reporting/index',$lepar);
+            $this->load->view('reporting/report_pdf',$lepar);
 
         }
 
