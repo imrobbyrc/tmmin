@@ -1,8 +1,8 @@
 <?php
 
-$pdf = new Pdf('L', 'mm', 'LETTER', true, 'UTF-8', false);
+$pdf = new Pdf('L', 'mm', 'A4', true, 'UTF-8', false);
 
-$pdf->SetTitle('Contohsdsdsd');
+$pdf->SetTitle('Report : '.$tanggal.' Shift : '.$shift);
 $pdf->SetAutoPageBreak(true);
 $pdf->SetAuthor('Author');
 $pdf->AddPage();
