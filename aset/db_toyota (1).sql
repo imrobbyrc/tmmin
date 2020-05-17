@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 17, 2020 at 09:13 AM
+-- Generation Time: May 17, 2020 at 09:37 AM
 -- Server version: 5.7.24
 -- PHP Version: 5.6.8
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `furnace_alarm_history` (
   `id` int(10) UNSIGNED NOT NULL,
-  `stdvalue_id` int(10) UNSIGNED NOT NULL,
+  `msg_id` int(4) UNSIGNED NOT NULL,
   `starttime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `endtime` datetime DEFAULT NULL,
   `field_val` varchar(10) NOT NULL
@@ -40,8 +40,28 @@ CREATE TABLE `furnace_alarm_history` (
 -- Dumping data for table `furnace_alarm_history`
 --
 
-INSERT INTO `furnace_alarm_history` (`id`, `stdvalue_id`, `starttime`, `endtime`, `field_val`) VALUES
-(1, 1, '2020-05-17 11:31:03', '2020-05-17 11:31:50', '50');
+INSERT INTO `furnace_alarm_history` (`id`, `msg_id`, `starttime`, `endtime`, `field_val`) VALUES
+(1, 1, '2020-05-17 15:54:58', '2020-05-17 15:56:49', '50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `furnace_alarm_msg`
+--
+
+CREATE TABLE `furnace_alarm_msg` (
+  `id` int(4) UNSIGNED NOT NULL,
+  `params_id` int(10) UNSIGNED NOT NULL,
+  `alarm_msg` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `furnace_alarm_msg`
+--
+
+INSERT INTO `furnace_alarm_msg` (`id`, `params_id`, `alarm_msg`) VALUES
+(1, 1, 'Message 1 Low'),
+(2, 1, 'Message 2 High');
 
 -- --------------------------------------------------------
 
@@ -220,7 +240,14 @@ INSERT INTO `furnace_std_val` (`id`, `param_id`, `timestamp`, `lowval`, `highval
 ALTER TABLE `furnace_alarm_history`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`) USING BTREE,
-  ADD KEY `std_val` (`stdvalue_id`);
+  ADD KEY `msg_id` (`msg_id`);
+
+--
+-- Indexes for table `furnace_alarm_msg`
+--
+ALTER TABLE `furnace_alarm_msg`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `furnace_alarm_msg_ibfk_1` (`params_id`);
 
 --
 -- Indexes for table `furnace_field_value`
@@ -234,8 +261,7 @@ ALTER TABLE `furnace_field_value`
 --
 ALTER TABLE `furnace_param_definition`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`) USING BTREE,
-  ADD UNIQUE KEY `param_uid` (`params_uid`) USING BTREE;
+  ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
 --
 -- Indexes for table `furnace_std_val`
@@ -253,6 +279,12 @@ ALTER TABLE `furnace_std_val`
 --
 ALTER TABLE `furnace_alarm_history`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `furnace_alarm_msg`
+--
+ALTER TABLE `furnace_alarm_msg`
+  MODIFY `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `furnace_field_value`
@@ -280,7 +312,13 @@ ALTER TABLE `furnace_std_val`
 -- Constraints for table `furnace_alarm_history`
 --
 ALTER TABLE `furnace_alarm_history`
-  ADD CONSTRAINT `std_val` FOREIGN KEY (`stdvalue_id`) REFERENCES `furnace_std_val` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `msg_id` FOREIGN KEY (`msg_id`) REFERENCES `furnace_alarm_msg` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `furnace_alarm_msg`
+--
+ALTER TABLE `furnace_alarm_msg`
+  ADD CONSTRAINT `furnace_alarm_msg_ibfk_1` FOREIGN KEY (`params_id`) REFERENCES `furnace_param_definition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `furnace_field_value`
