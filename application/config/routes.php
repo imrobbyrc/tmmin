@@ -51,8 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['report'] = 'backend/report/index';
-$route['report/report-daily'] = 'backend/report/daily_report';
-$route['report/attachment'] = 'backend/report/image_report';
+$route['report/report-daily'] = 'backend/report/dailyReport';
+$route['report/attachment'] = 'backend/report/imageReport';
 
 
 $route['default_controller'] = 'welcome';

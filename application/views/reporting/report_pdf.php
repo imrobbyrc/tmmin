@@ -1,17 +1,11 @@
 <?php
 
-$pageLayout = array(800, 900);
-
-$pdf = new Pdf('L', 'pt', $pageLayout, true, 'UTF-8', false);
+$pdf = new Pdf('L', 'mm', 'LETTER', true, 'UTF-8', false);
 
 $pdf->SetTitle('Contohsdsdsd');
-$pdf->SetTopMargin(20);
-$pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(true);
 $pdf->SetAuthor('Author');
-$pdf->SetDisplayMode('real', 'default');
 $pdf->AddPage();
-$pdf->Write(0, 'Example of HTML tables', '', 0, 'L', true, 0, false, false, 0);
 
 $pdf->SetFont('helvetica', '', 8);
 
@@ -107,16 +101,16 @@ $table = '
             <tr>
                 <td rowspan="2">STD.</td>
                 <td>LOW</td>';
-                for ($i = 0 ; $i <= 22 ; $i++){
-    $table.= '<td>1</td>';
+                foreach($standardValue as $row){
+    $table.= '<td>'.$row['lowval'].'</td>';
                 };
     $table.='<td></td>
             <td></td>
             </tr>
             <tr>
                 <td>HIGH</td>';
-                for ($i = 0 ; $i <= 22 ; $i++){
-    $table.='<td>2</td>';
+                foreach($standardValue as $row){
+    $table.= '<td>'.$row['highval'].'</td>';
                 }
     $table.='<td></td>
             <td></td>
@@ -130,29 +124,29 @@ $table = '
                 }
                 
                 $table.=  '<td>'. $data["Clock"] .'</td>
-                <td>'. $data["Fce Combustion"] .'</td>
-                <td>'. $data["Fce Outlet Sand"] .'</td>
-                <td>'. $data["Fce Inlet Sand"] .'</td>
-                <td>'. $data["Top Temp. Fce"] .'</td>
-                <td>'. $data["PressureBlank"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["Pressure"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["Pressure"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["Speed Screw Feeder"] .'</td>
-                <td>'. $data["Pressure"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["Pressure"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["Nozzle No. 1"] .'</td>
-                <td>'. $data["Nozzle No. 2"] .'</td>
-                <td>'. $data["Nozzle No. 3"] .'</td>
-                <td>'. $data["Temp. No. 1"] .'</td>
-                <td>'. $data["Temp. No. 2"] .'</td>
-                <td>'. $data["Damper Open"] .'</td>
-                <td>'. $data["DC Inlet Temp. (T10b)"] .'</td>
+                <td>'. $data["T1_S1"] .'</td>
+                <td>'. $data["T2_S2"] .'</td>
+                <td>'. $data["T3_S3"] .'</td>
+                <td>'. $data["T4_S4"] .'</td>
+                <td>'. $data["Self"] .'</td>
+                <td>'. $data["MOT2"] .'</td>
+                <td>'. $data["MOT3"] .'</td>
+                <td>'. $data["PT4"] .'</td>
+                <td>'. $data["MOT4"] .'</td>
+                <td>'. $data["PT6"] .'</td>
+                <td>'. $data["MOT6"] .'</td>
+                <td>'. $data["INV1"] .'</td>
+                <td>'. $data["PT5"] .'</td>
+                <td>'. $data["MOT5"] .'</td>
+                <td>'. $data["PT7"] .'</td>
+                <td>'. $data["MOT7"] .'</td>
+                <td>'. $data["Tc2"] .'</td>
+                <td>'. $data["Tc3"] .'</td>
+                <td>'. $data["Tc4"] .'</td>
+                <td>'. $data["Tc5"] .'</td>
+                <td>'. $data["Tc6"] .'</td>
+                <td>'. $data["MOT8"] .'</td>
+                <td>'. $data["T10b"] .'</td>
                 <td></td>
                 <td></td>     
             </tr>';

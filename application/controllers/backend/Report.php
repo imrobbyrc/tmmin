@@ -7,14 +7,12 @@ class Report extends CI_Controller {
         $this->load->model('M_EquipDef');
         $this->load->model('M_EquipVal');
         $this->load->library('Pdf');
-
-        $this->jumlah_data = 720; //total data untuk 1 jam dengan interval 5 detik
-
-
+        
         // check login nanti disini
         // if (!$this->session->userdata('login')) {
         //      redirect('backend/cmsauth');
         // } 
+        
     }
 
 
@@ -23,13 +21,11 @@ class Report extends CI_Controller {
         $this->load->view('reporting/index');
     }
 
-    public function daily_report()
+    public function dailyReport()
     {
 
         if($_POST)
         {
-
-            
             $result = array();
 
             $shift = $this->input->post('shift');
@@ -43,68 +39,84 @@ class Report extends CI_Controller {
                 $clock = [20,21,22,23,24,01,02,03,04,05,06];
             }
 
-          
-        
-            $datas = $this->db->query("SELECT ed.equipDesc, ev.equipId, SUM(ev.value)/$this->jumlah_data AS temp, left(ev.timestamp,13) as clock
-                                        FROM equipval ev JOIN equipdef ed on ed.equipId = ev.equipId  
-                                        WHERE $queryTime GROUP BY ev.equipId, left(ev.timestamp,13), ed.equipDesc")->result();
-
-
+            $getParam = $this->db->query("SELECT params_uid FROM furnace_param_definition ")->result();
+    
+            $datas = $this->db->query("SELECT ed.params_uid, ev.param_id, SUM(ev.value)
+                                        AS temp, count(ev.id) as total_data ,left(ev.timestamp,13) AS clock
+                                        FROM furnace_field_value ev JOIN furnace_param_definition ed on  ev.param_id  = ed.id
+                                        WHERE $queryTime GROUP BY ev.param_id, left(ev.timestamp,13), ed.params_uid")->result();
+                         
+            //Repot Data
             $dataku = [];
             foreach($clock as $row){
                 $dataSatuan = [];
 
                 $dataSatuan['Clock'] = $row;
-                $dataSatuan['Fce Combustion'] = '';
-                $dataSatuan['Fce Outlet Sand'] = '';
-                $dataSatuan['Fce Inlet Sand'] = '';
-                $dataSatuan['Top Temp. Fce'] = '';
-                $dataSatuan['PressureBlank'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['Pressure'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['Pressure'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['Speed Screw Feeder'] = '';
-                $dataSatuan['Pressure'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['Pressure'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['Nozzle No. 1'] = '';
-                $dataSatuan['Nozzle No. 2'] = '';
-                $dataSatuan['Nozzle No. 3'] = '';
-                $dataSatuan['Temp. No. 1'] = '';
-                $dataSatuan['Temp. No. 2'] = '';
-                $dataSatuan['Damper Open'] = '';
-                $dataSatuan['DC Inlet Temp. (T10b)'] = '';
+                $dataSatuan['Self'] = '';
 
-                foreach($datas as $data){
+                foreach($getParam as $value ){ //parsing params_uid
+                    $dataSatuan[$value->params_uid] = '';
+                }
 
-                    if(substr($data->clock,11,2) == $row){
+                foreach($dataSatuan as $key => $val){
 
-                        if($data->equipDesc == 'Fce Combustion Temperature Sensor'){
-                            $dataSatuan['Fce Combustion'] = round($data->temp,2);
-
-                        }elseif($data->equipDesc == 'Fce Outlet Sand Temperature Sensor'){
-                            
-                            $dataSatuan['Fce Outlet Sand'] = round($data->temp,2);
-                        }
-
-                    } 
-            
+                    foreach($datas as $data){
+                        $valueFix = $data->temp / $data->total_data; //data penjumlahan data dibagi banyak data
+                        if(substr($data->clock,11,2) == $row){
+    
+                            if($data->params_uid == $key){
+                                $dataSatuan[$key] = round($valueFix,3);
+    
+                            }
+    
+                        } 
                     
+                    }
+
                 }
 
                 $dataku[] = $dataSatuan;
 
             }
-            // print_r($dataku);
-            // exit;
-            //$data['clock'] = $array;
-            $lepar['arrayMaster'] = $dataku;
+
+            
+            //Standart Value
+            $std = $this->db->query("SELECT param_id, lowval, highval, timestamp FROM furnace_std_val ev WHERE $queryTime")->result_array();
+
+            if(count($std) == 0){ //jika tidak ada std untuk tanggal tersebut, ambil std tanggal terbaru
+
+                $std = $this->db->query("SELECT param_id, lowval, highval,timestamp FROM furnace_std_val ev ORDER BY timestamp DESC ")->result_array();
+
+            }
+
+            $stdExec = array();
+            $stdResult = array();
+            foreach($std as $key => $value){ //remove duplicate
+                $paramId = $value['param_id'];
     
-            $this->load->view('reporting/report_pdf',$lepar);
+                if(!in_array($paramId,$stdExec)){
+                    $stdExec[] = $paramId;
+                    $stdResult[$key] = $value; 
+                }
+            }
+            usort($stdResult, function($a, $b) { //sort array berdasarkan urutan param_id
+                return $a['param_id'] - $b['param_id'];
+            });
+            $inserted = array( 
+                array(
+                    'param_id' => '' ,
+                    'lowval' => '',
+                    'highval' => '',
+                    'timestamp' => ''
+                )
+                
+            );
+            array_splice( $stdResult, 4, 0, $inserted ); //insert array kosong untuk pressure
+
+            $reportData['standardValue'] = $stdResult;
+            $reportData['arrayMaster'] = $dataku;
+    
+            $this->load->view('reporting/report_pdf',$reportData);
 
         }
 
