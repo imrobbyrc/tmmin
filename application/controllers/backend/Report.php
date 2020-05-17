@@ -33,9 +33,12 @@ class Report extends CI_Controller {
             $datetime = $this->input->post('datetime');
 
             $queryTime = 'left(ev.timestamp,13) >= "' . $datetime . ' 07" and  left(ev.timestamp,13) <= "' . $datetime . ' 19"';
+            $queryAlarm = 'left(ah.starttime,13) >="' . $datetime . ' 07" and left(ah.endtime,13) <= "'. $datetime . ' 19"'; 
             $clock = [7,8,9,10,11,12,13,14,15,16,17,18,19];
             if($shift == 'malam'){
-                $queryTime = 'left(ev.timestamp,13) >= "' . $datetime . ' 20" and  left(ev.timestamp,13) <= "' . $datetime . ' 06"';
+                $nextDay = date('Y-m-d', strtotime($datetime. "+1 days"));
+                $queryTime = 'left(ev.timestamp,13) >= "' . $datetime . ' 20" and  left(ev.timestamp,13) <= "' . $nextDay . ' 06"';
+                $queryAlarm = 'left(ah.starttime,13) >="' . $datetime . ' 20" and left(ah.endtime,13) <= "'. $nextDay . ' 06"';
                 $clock = [20,21,22,23,24,01,02,03,04,05,06];
             }
 
@@ -112,16 +115,67 @@ class Report extends CI_Controller {
             );
             array_splice( $stdResult, 4, 0, $inserted ); //insert array kosong untuk pressure
 
+
+
+            //alarm report
+            $alarm = $this->db->query("SELECT ed.params_uid, am.alarm_msg, ah.field_val, ah.starttime, ah.endtime  
+                                        FROM furnace_alarm_history ah JOIN furnace_alarm_msg am ON ah.msg_id = am.id JOIN furnace_param_definition ed ON ed.id = am.params_id
+                                        WHERE $queryAlarm")->result();
+
+
+
+            $alarmResult = array();
+            foreach ($alarm as $key => $val) {
+                $data   = new \stdClass();
+
+                //Field
+                $field = array('params_uid','alarm_msg','field_val','starttime','endtime');
+                foreach ($field as $val_field) {
+                    $data->$val_field = $val->$val_field;
+                }
+                
+                $duration = $this->getDuration($val->starttime,$val->endtime);
+            
+                if(isset($duration))
+                {
+                    $data->duration = $duration;
+                }
+                else
+                {
+                    $data->duration = null;
+                }
+                
+
+                $alarmResult[] = $data;
+            }
+
             //Send To View
             $reportData['tanggal'] = $datetime;
             $reportData['shift'] = $shift;
             $reportData['color'] = $color;
             $reportData['standardValue'] = $stdResult;
             $reportData['arrayMaster'] = $dataku;
+            $reportData['alarm'] = $alarmResult;
             $this->load->view('reporting/report_pdf',$reportData);
 
         }
 
     }
 
+    private function getDuration($start,$end){
+
+        $diff = abs(strtotime($end) - strtotime($start));
+        $years   = floor($diff / (365*60*60*24)); 
+        $months  = floor(($diff - $years * 365*60*60*24) / (30*60*60*24)); 
+        $days    = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+        $hours   = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24)/ (60*60)); 
+        $minuts  = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60)/ 60); 
+        $seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minuts*60)); 
+
+        $duration = $hours .' Jam '. $minuts . ' Menit';
+        return $duration;
+        //printf("%d years, %d months, %d days, %d hours, %d minuts\n, %d seconds\n", $years, $months, $days, $hours, $minuts, $seconds);
+    }
+
+    
 }

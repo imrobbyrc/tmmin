@@ -156,7 +156,7 @@ $table.='</tbody>
 $pdf->writeHTML($table, true, false, false, false, '');
 
 
-//
+//alarm
 $table  ='<table border="1" cellpadding="2" cellspacing="2" nobr="true">
 <thead>
     <tr>
@@ -174,19 +174,23 @@ $table  ='<table border="1" cellpadding="2" cellspacing="2" nobr="true">
         <th>Finish</th>
     </tr>
 </thead>
-<tbody>
-    <tr>
+<tbody>';
+$no = 1;
+foreach($alarm as $row){
+$table .= '<tr>
+        <td>' .$no++ . '</td>
+        <td>'.$row->starttime.'</td>
+        <td>'.$row->endtime.'</td>
+        <td>'.$row->duration.'</td>
+        <td>'.$row->alarm_msg.'</td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
+    </tr>';
+}
+
+ $table.=' <tr>
         <td colspan="8"></td>
         <td></td>
     </tr>
