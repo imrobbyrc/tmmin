@@ -109,13 +109,15 @@ class Report extends CI_Controller {
                     'highval' => '',
                     'timestamp' => ''
                 )
-                
             );
             array_splice( $stdResult, 4, 0, $inserted ); //insert array kosong untuk pressure
 
+            //Send To View
+            $reportData['tanggal'] = $datetime;
+            $reportData['shift'] = $shift;
+            $reportData['color'] = $color;
             $reportData['standardValue'] = $stdResult;
             $reportData['arrayMaster'] = $dataku;
-    
             $this->load->view('reporting/report_pdf',$reportData);
 
         }
