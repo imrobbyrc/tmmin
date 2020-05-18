@@ -97,10 +97,18 @@ class Report extends CI_Controller {
             foreach($std as $key => $value){ //remove duplicate
                 $paramId = $value['param_id'];
     
-                if(!in_array($paramId,$stdExec)){
-                    $stdExec[] = $paramId;
+                // if(!in_array($paramId,$stdExec)){
+                //     $stdExec[] = $paramId;
+                //     $stdResult[$key] = $value; 
+                // }
+
+                if (!isset($stdExec[$paramId])) { 
+                    
+                    $stdExec[$paramId] = $paramId;
                     $stdResult[$key] = $value; 
+                    
                 }
+            
             }
             usort($stdResult, function($a, $b) { //sort array berdasarkan urutan param_id
                 return $a['param_id'] - $b['param_id'];
