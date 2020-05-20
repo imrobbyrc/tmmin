@@ -1,0 +1,1570 @@
+.rotate {
+    white-space:nowrap;
+    margin-top:0rem;
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg); 
+    -ms-transform: rotate(-90deg); 
+    -o-transform: rotate(-90deg); 
+    transform: rotate(-90deg); 
+}
+html {
+    overflow: hidden
+}
+
+.waffle,
+.grid-fixed-table {
+    font-size: 13px; 
+    table-layout: fixed;
+    border-collapse: separate;
+    border-style: none;
+    border-spacing: 0;
+    width: 100%;
+    cursor: default
+}
+
+.grid-container {
+    height: 100%;
+    width: 100%;
+    overflow: auto
+}
+.ritz .waffle a {
+    color: inherit;
+}
+.ritz .waffle .s86 {
+    border-right: none;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s17 {
+    border-right: 2px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s13 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s19 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s49 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s93 {
+    border-left: none;
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s110 {
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+}
+.ritz .waffle .s59 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #a8d08d;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s26 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s94 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s74 {
+    border-left: none;
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s46 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffc000;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s100 {
+    border-left: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s65 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #a8d08d;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s105 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #d8d8d8;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s9 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s58 {
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s116 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #d8d8d8;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s92 {
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s55 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: right;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s111 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s54 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s5 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s99 {
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s77 {
+    border-right: none;
+    background-color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s27 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #9cc2e5;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s64 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s106 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #d8d8d8;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s70 {
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s32 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s14 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s80 {
+    border-left: none;
+    border-right: none;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s91 {
+    border-right: none;
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s108 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s40 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffff00;
+    text-align: right;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s90 {
+    border-bottom:1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s95 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s109 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+}
+.ritz .waffle .s112 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s39 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffff00;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s53 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s115 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #d8d8d8;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s37 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffc000;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s50 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s47 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffff00;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s60 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID transparent;
+    background-color: #a8d08d;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s89 {
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s69 {
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+}
+.ritz .waffle .s101 {
+    border-left: none;
+    border-right: 2px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s31 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #9cc2e5;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s22 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s28 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #9cc2e5;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s35 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffff00;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s103 {
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #ff0000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s43 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ed7d31;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: top;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s12 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s114 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s7 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #e2efd9;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s48 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffff00;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s78 {
+    border-left: none;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s75 {
+    border-left: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    border-bottom: 2px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s11 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s71 {
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s102 {
+    border-left: none;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #ff0000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s107 {
+    background-color: #ffffff;
+    text-align: center;
+    color: #ff0000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s1 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 18px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s3 {
+    border-left: none;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s24 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s67 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID transparent;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s63 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID transparent;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s33 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s30 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #9cc2e5;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s97 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s61 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #a8d08d;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s45 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffff00;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s73 {
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s6 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s15 {
+    border-right: 2px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s96 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s29 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffc000;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s79 {
+    border-left: none;
+    border-right: none;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s82 {
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s21 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s23 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s81 {
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s42 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffff00;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s44 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffff00;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s0 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 14px;
+    vertical-align: middle;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s10 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s8 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #e2efd9;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s4 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #7030a0;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s76 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s2 {
+    border-right: none;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s56 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffd965;
+    text-align: center;
+    font-style: italic;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s34 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ed7d31;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: top;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s20 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s62 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s18 {
+    border-left: none;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s87 {
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s104 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s84 {
+    border-left: none;
+    background-color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s36 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffff00;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s16 {
+    border-left: none;
+    border-right: 2px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s72 {
+    border-right: none;
+    border-bottom: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s52 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffd965;
+    text-align: center;
+    font-style: italic;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s51 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: right;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s66 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s25 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s113 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s88 {
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s83 {
+    border-left: none;
+    border-right: none;
+    background-color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s57 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s98 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s41 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 2px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s38 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px DASHED #000000;
+    background-color: #ffff00;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s68 {
+    border-bottom: 2px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #bfbfbf;
+    text-align: left;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}
+.ritz .waffle .s85 {
+    border-left: none;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "docs-Calibri", Arial;
+    font-size: 11px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 0px 3px 0px 3px;
+}

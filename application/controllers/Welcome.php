@@ -1,25 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+class Welcome extends Public_controller {
+ 
 	public function index()
-	{
-		$this->load->view('welcome_message');
+	{ 
+		
+		// Meta Desc
+		$this->data_header['browser_title'] =  ucwords('Home') . ' | Report Automation';
+		$this->data_header['meta_description'] = ucwords('Home') . ' | Report Automation';
+		$this->data_header['meta_image'] = base_url('assets/files/logo.jpg');
+		$this->data_header['stylesheets'][0] = 'custom';
+
+		// Footer 
+		$this->data_footer['scripts'][0] = 'custom';
+
+		if($this->agent->is_mobile()){
+			$this->load->view('template/header', $this->data_header);
+			$this->load->view('welcome_message');
+			$this->load->view('template/footer', $this->data_footer);
+		}else{
+			$this->load->view('template/header', $this->data_header);
+			$this->load->view('welcome_message');
+			$this->load->view('template/footer', $this->data_footer);
+		} 
 	}
 }

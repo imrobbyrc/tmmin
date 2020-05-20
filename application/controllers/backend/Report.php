@@ -1,12 +1,12 @@
 <?php
 
-class Report extends CI_Controller {  
+class Report extends Public_Controller {  
  
     function __construct() {
         parent::__construct();
         $this->load->model('M_EquipDef');
         $this->load->model('M_EquipVal');
-        $this->load->library('Pdf');
+        $this->load->library('Pdf'); 
         
         // check login nanti disini
         // if (!$this->session->userdata('login')) {
@@ -18,7 +18,26 @@ class Report extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('reporting/index');
+		// Meta Desc
+		$this->data_header['browser_title'] =  ucwords('Home') . ' | Report Automation';
+		$this->data_header['meta_description'] = ucwords('Home') . ' | Report Automation';
+		$this->data_header['meta_image'] = base_url('assets/files/logo.jpg');
+		$this->data_header['stylesheets'][] = 'report';
+		$this->data_header['stylesheets'][] = 'jquery-ui';
+
+		// Footer 
+		$this->data_footer['scripts'][] = 'report';
+		$this->data_footer['scripts'][] = 'jquery-ui.min';
+
+		if($this->agent->is_mobile()){
+			$this->load->view('template/header', $this->data_header);
+            $this->load->view('reporting/index');
+			$this->load->view('template/footer', $this->data_footer);
+		}else{
+			$this->load->view('template/header', $this->data_header);
+            $this->load->view('reporting/index');
+			$this->load->view('template/footer', $this->data_footer);
+		} 
     }
 
     public function dailyReport()
@@ -28,9 +47,9 @@ class Report extends CI_Controller {
         {
             $result = array();
 
-            $shift = $this->input->post('shift');
-            $color = $this->input->post('color');
-            $datetime = $this->input->post('datetime');
+            $shift = strtolower($this->security->xss_clean($this->input->post('shift')));
+            $color = strtolower($this->security->xss_clean($this->input->post('color')));
+            $datetime = $this->security->xss_clean($this->input->post('datetime'));
 
             $queryTime = 'left(ev.timestamp,13) >= "' . $datetime . ' 07" and  left(ev.timestamp,13) <= "' . $datetime . ' 19"';
             $queryAlarm = 'left(ah.starttime,13) >="' . $datetime . ' 07" and left(ah.endtime,13) <= "'. $datetime . ' 19"'; 
@@ -163,8 +182,12 @@ class Report extends CI_Controller {
             $reportData['color'] = $color;
             $reportData['standardValue'] = $stdResult;
             $reportData['arrayMaster'] = $dataku;
-            $reportData['alarm'] = $alarmResult;
-            $this->load->view('reporting/report_pdf',$reportData);
+            $reportData['alarm'] = $alarmResult;  
+
+            $this->pdf->setPaper('A4', 'landscape');
+            $this->pdf->filename = "report-automation.pdf";
+            // $this->load->view('reporting/report_pdf'); 
+            $this->pdf->load_view('reporting/report_pdf', $reportData); 
 
         }
 
