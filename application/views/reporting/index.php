@@ -9,7 +9,7 @@
                     <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
                     <div class="form-group row">
                         <label class="col-2">Shift</label> 
-                        <select class="form-control col-10" id="exampleFormControlSelect1">
+                        <select class="form-control col-10" id="exampleFormControlSelect1" name="shift">
                             <option value="pagi">Pagi</option>
                             <option value="malam">Malam</option>
                         </select>

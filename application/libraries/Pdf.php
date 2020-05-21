@@ -11,7 +11,12 @@
  * @license        MIT License
  * @link        https://github.com/ardianta/codeigniter-dompdf
  */
-require_once APPPATH.'libraries/dompdf/autoload.inc.php';
+$dompdf = 'dompdf-0.8.5';
+if(phpversion() == '5.6.8'){
+    $dompdf = 'dompdf-0.8.3';
+}
+require_once APPPATH.'libraries/'.$dompdf.'/autoload.inc.php';
+
 use Dompdf\Dompdf;
 class Pdf extends Dompdf{
     /**

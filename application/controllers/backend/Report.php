@@ -87,7 +87,7 @@ class Report extends Public_Controller {
                         if(substr($data->clock,11,2) == $row){
     
                             if($data->params_uid == $key){
-                                $dataSatuan[$key] = round($valueFix,3);
+                                $dataSatuan[$key] = round($valueFix,2);
     
                             }
     
@@ -184,9 +184,10 @@ class Report extends Public_Controller {
             $reportData['arrayMaster'] = $dataku;
             $reportData['alarm'] = $alarmResult;  
 
+    
             $this->pdf->setPaper('A4', 'landscape');
             $this->pdf->filename = "report-automation.pdf";
-            // $this->load->view('reporting/report_pdf'); 
+            //$this->load->view('reporting/report_pdf',$reportData); 
             $this->pdf->load_view('reporting/report_pdf', $reportData); 
 
         }
