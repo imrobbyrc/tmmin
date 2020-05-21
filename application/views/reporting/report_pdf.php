@@ -2,36 +2,6 @@
     <div class="ritz grid-container" dir="ltr">
         <table class="waffle no-grid" cellspacing="0" cellpadding="0">
             <thead>
-                <tr>
-                    <th class="row-header freezebar-origin-ltr"></th>
-                    <th style="width: 45px;"></th>
-                    <th style="width: 55px;"></th>
-                    <th style="width: 48px;"></th>
-                    <th style="width: 55px;"></th>
-                    <th style="width: 58px;"></th>
-                    <th style="width: 52px;"></th>
-                    <th style="width: 43px;"></th>
-                    <th style="width: 43px;"></th>
-                    <th style="width: 44px;"></th>
-                    <th style="width: 43px;"></th>
-                    <th style="width: 43px;"></th>
-                    <th style="width: 43px;"></th>
-                    <th style="width: 43px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 61px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 46px;"></th>
-                    <th style="width: 48px;"></th>
-                    <th style="width: 48px;"></th>
-                    <th style="width: 48px;"></th>
-                    <th style="width: 63px;"></th>
-                    <th style="width: 44px;"></th>
-                    <th style="width: 44px;"></th>
-                </tr>
             </thead>
             <tbody>
                 <tr style="height: 19px;">
@@ -95,30 +65,30 @@
                 </tr>
                 <tr style="height: 101px;">
                     <th id="298766174R6" style="height: 101px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 101px;"></div></th>
-                    <td style="height:150px" class="s13"><div class="rotate">Fce Combustion</div></td>
-                    <td style="height:150px" class="s13"><div class="rotate">Fce Outlet Sand</div></td>
-                    <td style="height:150px" class="s13"><div class="rotate">Fce Inlet Sand</div></td>
-                    <td style="height:150px" class="s14"><div class="rotate">Top Temp. Fce</div></td>
-                    <td style="height:150px" class="s13"><div class="rotate">Pressure</div></td>
-                    <td style="height:150px" class="s13"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Pressure</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Pressure</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Pressure</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Pressure</div></td>
-                    <td style="height:150px" class="s15"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s16 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 1</div></div></td>
-                    <td style="height:150px" class="s16 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 2</div></div></td>
-                    <td style="height:150px" class="s17 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 3</div></div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Temp. No. 1</div></td>
-                    <td style="height:150px" class="s12"><div class="rotate">Temp. No. 2</div></td>
-                    <td style="height:150px" class="s9"><div class="rotate">Damper Open</div></td>
-                    <td style="height:150px" class="s15"><div class="rotate">DC Inlet Temp. (T10b)</div></td>
-                    <td style="height:150px" class="s16 softmerge"><div class="softmerge-inner" style="width: 43px; left: -3px;"><div class="rotate">Conveying</div></div></td>
-                    <td style="height:150px" class="s16 softmerge"><div class="softmerge-inner" style="width: 53px; left: -3px;"><div class="rotate">ACCUM</div></div></td>
+                    <td style="height:120px" class="s13"><div class="rotate">Fce Combustion</div></td>
+                    <td style="height:120px" class="s13"><div class="rotate">Fce Outlet Sand</div></td>
+                    <td style="height:120px" class="s13"><div class="rotate">Fce Inlet Sand</div></td>
+                    <td style="height:120px" class="s14"><div class="rotate">Top Temp. Fce</div></td>
+                    <td style="height:120px" class="s13"><div class="rotate">Pressure</div></td>
+                    <td style="height:120px" class="s13"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Pressure</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Pressure</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Pressure</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Pressure</div></td>
+                    <td style="height:120px" class="s15"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 1</div></div></td>
+                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 2</div></div></td>
+                    <td style="height:120px" class="s17 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 3</div></div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Temp. No. 1</div></td>
+                    <td style="height:120px" class="s12"><div class="rotate">Temp. No. 2</div></td>
+                    <td style="height:120px" class="s9"><div class="rotate">Damper Open</div></td>
+                    <td style="height:120px" class="s15"><div class="rotate">DC Inlet Temp. (T10b)</div></td>
+                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 43px; left: -3px;"><div class="rotate">Conveying</div></div></td>
+                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 53px; left: -3px;"><div class="rotate">ACCUM</div></div></td>
                 </tr>
                 <tr style="height: 25px;">
                     <th id="298766174R7" style="height: 25px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 25px;"></div></th>
@@ -286,7 +256,16 @@
                     <td class="s55" colspan="4">Finish Prod. :</td>
                     <td class="s56" colspan="7">formatnya (hh : mm : ss)</td>
                 </tr>
-     
+                <tr style="height: 20px;">
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+    
+    
+<div class="ritz grid-container" dir="ltr">
+    <table class="waffle no-grid" cellspacing="0" cellpadding="0">
+            <thead> 
                 <tr style="height: 20px;">
                     <th id="298766174R26" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;"></div></th>
                     <td class="s33" rowspan="2">No.</td>
@@ -303,6 +282,8 @@
                     <td class="s58">Start</td>
                     <td class="s33">End</td>
                 </tr>
+            </thead>
+            <tbody>     
                 <?php
                 $no = 1;
                 foreach($alarm as $row){
@@ -383,6 +364,16 @@
                     <td class="s76">menit</td>
                 </tr>
                 <tr style="height: 20px;">
+                </tr>
+            </tbody>
+        </table>
+</div> 
+
+
+<div class="ritz grid-container" dir="ltr">
+    <table class="waffle no-grid" cellspacing="0" cellpadding="0">
+            <thead> 
+                <tr style="height: 20px;">
                     <th id="298766174R34" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;"></div></th>
                     <td class="s33" colspan="4" rowspan="3">CHECK ANALYSIS</td>
                     <td class="s77 softmerge"><div class="softmerge-inner" style="width: 108px; left: -1px;">CYCLE TIME</div></td>
@@ -395,11 +386,11 @@
                     <td class="s81"></td>
                     <td class="s81"></td>
                     <td class="s82"></td>
-                    <td class="s77 softmerge"><div class="softmerge-inner" style="width: 136px; left: -1px;">EFFICIENCY</div></td>
+                    <td class="s77 softmerge"><div class="softmerge-inner" style="width: auto; left: -1px;">EFFICIENCY</div></td>
                     <td class="s83"></td>
                     <td class="s84"></td>
                     <td class="s85">=</td>
-                    <td class="s86 softmerge"><div class="softmerge-inner" style="width: 343px; left: -1px;">0.25 x T. Conveying / Running Hour x 100%</div></td>
+                    <td class="s86 softmerge"><div class="softmerge-inner" style="width: auto; left: -1px;">0.25 x T. Conveying / Running Hour x 100%</div></td>
                     <td class="s87"></td>
                     <td class="s79"></td>
                     <td class="s79"></td>
@@ -461,6 +452,8 @@
                     <td class="s71"></td>
                     <td class="s95"></td>
                 </tr>
+            </thead>
+            <tbody>    
                 <tr style="height: 20px;">
                     <th id="298766174R37" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;"></div></th>
                     <td class="s96" colspan="4">SHIFT</td>
@@ -692,6 +685,8 @@
                     <td class="s111" colspan="2">LH</td>
                     <td class="s111" colspan="2">GH</td>
                     <td class="s111" colspan="2">OPR</td>
+                </tr>
+                <tr style="height: 20px;">
                 </tr>
             </tbody>
         </table>

@@ -1,3 +1,5 @@
+
+@page { margin: 0px}
 .rotate {
     white-space:nowrap;
     margin-top:0rem;
@@ -7,14 +9,10 @@
     -o-transform: rotate(-90deg); 
     transform: rotate(-90deg); 
 }
-html {
-    overflow: hidden
-}
-
 .waffle,
 .grid-fixed-table {
     font-size: 13px; 
-    table-layout: fixed;
+    table-layout: flex;
     border-collapse: separate;
     border-style: none;
     border-spacing: 0;
@@ -23,7 +21,7 @@ html {
 }
 
 .grid-container {
-    height: 100%;
+    height: auto;
     width: 100%;
     overflow: auto
 }
