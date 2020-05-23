@@ -1,8 +1,6 @@
 <link type="text/css" rel="stylesheet" href="<?= FCPATH ?>assets/css/sheet.css" >
     <div class="ritz grid-container" dir="ltr">
         <table class="waffle no-grid" cellspacing="0" cellpadding="0">
-            <thead>
-            </thead>
             <tbody>
                 <tr style="height: 19px;">
                     <th id="298766174R0" style="height: 19px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 19px;"></div></th>
@@ -18,7 +16,7 @@
                         Laporan Produksi dan Check Temperature Furnace<br />
                         CKS - AZC300 - RC015 <span style="font-size: 18px; font-family: Calibri, Arial; font-weight: normal; color: #000000;">(REPORT AUTO GENERATE)</span>
                     </td>
-                    <td class="s2 softmerge"><div class="softmerge-inner" style="width: 93px; left: -1px;">Hari / Tanggal</div></td>
+                    <td class="s2">Hari / Tanggal</td>
                     <td class="s3"></td>
                     <td class="s4" colspan="3"><?= $tanggal ?></td>
                 </tr>
@@ -38,6 +36,7 @@
                     <td class="s7" colspan="2"><?php if($color == "white") { echo "White"; }?></td>
                     <td class="s8" colspan="2"><?php if($shift == "malam") { echo "Malam"; }?></td>
                 </tr>
+            <thead>
                 <tr style="height: 28px;">
                     <th id="298766174R4" style="height: 28px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 28px;"></div></th>
                     <td class="s9" colspan="2" rowspan="3">
@@ -80,20 +79,20 @@
                     <td style="height:120px" class="s12"><div class="rotate">Damper Open</div></td>
                     <td style="height:120px" class="s12"><div class="rotate">Pressure</div></td>
                     <td style="height:120px" class="s15"><div class="rotate">Damper Open</div></td>
-                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 1</div></div></td>
-                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 2</div></div></td>
-                    <td style="height:120px" class="s17 softmerge"><div class="softmerge-inner" style="width: 45px; left: -3px;"><div class="rotate">Nozzle No. 3</div></div></td>
+                    <td style="height:120px" class="s16"><div class="rotate">Nozzle No. 1</div></td>
+                    <td style="height:120px" class="s16"><div class="rotate">Nozzle No. 2</div></td>
+                    <td style="height:120px" class="s17"><div class="rotate">Nozzle No. 3</div></td>
                     <td style="height:120px" class="s12"><div class="rotate">Temp. No. 1</div></td>
                     <td style="height:120px" class="s12"><div class="rotate">Temp. No. 2</div></td>
                     <td style="height:120px" class="s9"><div class="rotate">Damper Open</div></td>
                     <td style="height:120px" class="s15"><div class="rotate">DC Inlet Temp. (T10b)</div></td>
-                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 43px; left: -3px;"><div class="rotate">Conveying</div></div></td>
-                    <td style="height:120px" class="s16 softmerge"><div class="softmerge-inner" style="width: 53px; left: -3px;"><div class="rotate">ACCUM</div></div></td>
+                    <td style="height:120px" class="s16"><div class="rotate">Conveying</div></td>
+                    <td style="height:120px" class="s16"><div class="rotate">ACCUM</div></td>
                 </tr>
                 <tr style="height: 25px;">
                     <th id="298766174R7" style="height: 25px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 25px;"></div></th>
                     <td class="s9" colspan="2">Kode Sensor</td>
-                    <td class="s18 softmerge"><div class="softmerge-inner" style="width: 50px; left: -6px;">(T1/S1)</div></td>
+                    <td class="s18">(T1/S1)</td>
                     <td class="s19">(T2/S2)</td>
                     <td class="s19">(T3/S3)</td>
                     <td class="s20">(T4/S4)</td>
@@ -148,6 +147,8 @@
                     <td class="s26"></td>
                     <td class="s26"></td>
                 </tr>
+                
+            </thead>
                 <tr style="height: 19px;">
                     <th id="298766174R9" style="height: 19px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 19px;"></div></th>
                     <td class="s11" rowspan="2">STD.</td>
@@ -263,7 +264,7 @@
     </div> 
     
     
-<div class="ritz grid-container" dir="ltr">
+<div class="ritz grid-container" dir="ltr" style=" page-break-before: always;">
     <table class="waffle no-grid" cellspacing="0" cellpadding="0">
             <thead> 
                 <tr style="height: 20px;">
@@ -357,7 +358,7 @@
                     <td class="s71"></td>
                     <td class="s71"></td>
                     <td class="s71"></td>
-                    <td class="s72 softmerge"><div class="softmerge-inner" style="width: 157px; left: -1px;">Total Line Stop :</div></td>
+                    <td class="s72">Total Line Stop :</td>
                     <td class="s73"></td>
                     <td class="s74"></td>
                     <td class="s75"></td>
@@ -370,15 +371,15 @@
 </div> 
 
 
-<div class="ritz grid-container" dir="ltr">
+<div class="ritz grid-container" dir="ltr" style="page-break-before: always;    ">
     <table class="waffle no-grid" cellspacing="0" cellpadding="0">
             <thead> 
                 <tr style="height: 20px;">
                     <th id="298766174R34" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;"></div></th>
                     <td class="s33" colspan="4" rowspan="3">CHECK ANALYSIS</td>
-                    <td class="s77 softmerge"><div class="softmerge-inner" style="width: 108px; left: -1px;">CYCLE TIME</div></td>
+                    <td class="s77">CYCLE TIME</td>
                     <td class="s78"></td>
-                    <td class="s79 softmerge"><div class="softmerge-inner" style="width: 171px; left: -1px;">1 Tangki = 15 menit</div></td>
+                    <td class="s79">1 Tangki = 15 menit</td>
                     <td class="s80"></td>
                     <td class="s79"></td>
                     <td class="s78"></td>
@@ -386,11 +387,11 @@
                     <td class="s81"></td>
                     <td class="s81"></td>
                     <td class="s82"></td>
-                    <td class="s77 softmerge"><div class="softmerge-inner" style="width: auto; left: -1px;">EFFICIENCY</div></td>
+                    <td class="s77">EFFICIENCY</td>
                     <td class="s83"></td>
                     <td class="s84"></td>
                     <td class="s85">=</td>
-                    <td class="s86 softmerge"><div class="softmerge-inner" style="width: auto; left: -1px;">0.25 x T. Conveying / Running Hour x 100%</div></td>
+                    <td class="s86">0.25 x T. Conveying / Running Hour x 100%</td>
                     <td class="s87"></td>
                     <td class="s79"></td>
                     <td class="s79"></td>
@@ -404,7 +405,7 @@
                     <th id="298766174R35" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;"></div></th>
                     <td class="s81"></td>
                     <td class="s81"></td>
-                    <td class="s86 softmerge"><div class="softmerge-inner" style="width: 171px; left: -1px;">1 Tangki = 300 kg</div></td>
+                    <td class="s86">1 Tangki = 300 kg</td>
                     <td class="s80"></td>
                     <td class="s79"></td>
                     <td class="s78"></td>
@@ -416,9 +417,9 @@
                     <td class="s81"></td>
                     <td class="s81"></td>
                     <td class="s89">=</td>
-                    <td class="s2 softmerge"><div class="softmerge-inner" style="width: 90px; left: -1px;">0.25 x</div></td>
+                    <td class="s2">0.25 x</td>
                     <td class="s90"></td>
-                    <td class="s79 softmerge"><div class="softmerge-inner" style="width: 188px; left: -1px;">Conveying x 100%</div></td>
+                    <td class="s79">Conveying x 100%</td>
                     <td class="s79"></td>
                     <td class="s79"></td>
                     <td class="s78"></td>
@@ -430,7 +431,7 @@
                     <th id="298766174R36" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;"></div></th>
                     <td class="s71"></td>
                     <td class="s71"></td>
-                    <td class="s91 softmerge"><div class="softmerge-inner" style="width: 128px; left: -1px;">1 Jam = 1.2 Ton</div></td>
+                    <td class="s91">1 Jam = 1.2 Ton</td>
                     <td class="s92"></td>
                     <td class="s93"></td>
                     <td class="s93"></td>
@@ -483,7 +484,7 @@
                     <td class="s98">STD IL</td>
                     <td class="s97">JAM</td>
                     <td class="s99">IL</td>
-                    <td class="s100 softmerge"><div class="softmerge-inner" style="width: 42px; left: -3px;">Rata2</div></td>
+                    <td class="s100">Rata2</td>
                     <td class="s97">JAM</td>
                     <td class="s99">IL</td>
                     <td class="s101">Rata2</td>

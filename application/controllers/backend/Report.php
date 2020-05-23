@@ -42,7 +42,17 @@ class Report extends Public_Controller {
 
     public function dailyReport()
     {
+		// Meta Desc
+		$this->data_header['browser_title'] =  ucwords('Home') . ' | Report Automation';
+		$this->data_header['meta_description'] = ucwords('Home') . ' | Report Automation';
+		$this->data_header['meta_image'] = base_url('assets/files/logo.jpg');
+		$this->data_header['stylesheets'][] = 'report';
+		$this->data_header['stylesheets'][] = 'jquery-ui';
 
+		// Footer 
+		$this->data_footer['scripts'][] = 'report';
+        $this->data_footer['scripts'][] = 'jquery-ui.min';
+        
         if($_POST)
         {
             $result = array();
@@ -183,12 +193,24 @@ class Report extends Public_Controller {
             $reportData['standardValue'] = $stdResult;
             $reportData['arrayMaster'] = $dataku;
             $reportData['alarm'] = $alarmResult;  
+            $reportData['fces'] = ["Fce Combustion", "Fce Outlet Sand",	"Fce Inlet Sand", "Top Temp. Fce",
+            "Pressure",	"Damper Open",	"Damper Open", "Pressure",	"Damper Open", "Pressure",	
+            "Damper Open", "Pressure", "Damper Open","Pressure", "Damper Open", "Nozzle No. 1",	
+            "Nozzle No. 2",	"Nozzle No. 3",	"Temp. No. 1", "Temp. No. 2", "Damper Open", "DC Inlet Temp. <br><span class='pt-3'>(T10b)</span>", 
+            "Conveying", "ACCUM"];  
+            $reportData['codes'] = ["(T1/S1)", "(T2/S2)", "(T3/S3)", "(T4/S4)", "", "MOT2", "MOT3", "PT4", "MOT4",
+            	"PT6", "MOT6", "INV1", "PT5", "MOT5", "PT7", "MOT7", "Tc2", "Tc3", "Tc4", "Tc5", "Tc6", "MOT8", "T10b", "", ""];
+            $reportData['units'] = ["°C","°C","°C","°C","mmAq","%","%","mmAq","%","mmAq","%","%","mmAq","%","mmAq"
+            ,"%","°C","°C","°C","°C","°C","%","°C","",""];
+            // static content
 
     
             $this->pdf->setPaper('A4', 'landscape');
             $this->pdf->filename = "report-automation.pdf";
-            //$this->load->view('reporting/report_pdf',$reportData); 
-            $this->pdf->load_view('reporting/report_pdf', $reportData); 
+ 
+            $this->load->view('reporting/rpdf', $reportData); 
+            // $this->pdf->load_view('reporting/rpdf', $reportData); 
+             
 
         }
 
