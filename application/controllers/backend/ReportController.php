@@ -121,7 +121,7 @@ class ReportController extends Public_Controller {
         $alarm = $this->db->query("SELECT ed.params_uid, am.alarm_msg, ah.field_val, ah.starttime, ah.endtime  
                                     FROM furnace_alarm_history ah JOIN furnace_alarm_msg am ON ah.msg_id = am.id JOIN furnace_param_definition ed ON ed.id = am.params_id
                                     WHERE $queryAlarm")->result();
-
+        $alarmResult = [];
         foreach ($alarm as $key => $val) {
             $data   = new \stdClass();
 
@@ -187,6 +187,7 @@ class ReportController extends Public_Controller {
         $shift = strtolower($this->security->xss_clean($this->input->post('shift')));
         $color = strtolower($this->security->xss_clean($this->input->post('color')));
         $datetime = $this->security->xss_clean($this->input->post('datetime'));
+        $type = strtolower($this->security->xss_clean($this->input->post('type')));
 
         $stdResult = array();
         $alarmResult = array();
@@ -223,7 +224,7 @@ class ReportController extends Public_Controller {
         $reportData['units'] = $this->units;
 
         // static content
-        $reportData['pic_name'] = isset($tempFile['pic_name']) ? $tempFile['pic_name'] : '';
+        $reportData['pic_names'] = isset($tempFile['pic_names']) ? $tempFile['pic_names'] : '';
         $reportData['stdlow'] = isset($tempFile['stdlow']) ? $tempFile['stdlow'] : '';
         $reportData['stdhigh'] = isset($tempFile['stdhigh']) ? $tempFile['stdhigh'] : '';
         $reportData['conveying'] = isset($tempFile['conveying']) ? $tempFile['conveying'] : array();
@@ -245,18 +246,21 @@ class ReportController extends Public_Controller {
         $reportData['malam_il'] = isset($tempFile['malam_il']) ? $tempFile['malam_il'] : '';
         $reportData['malam_avg'] = isset($tempFile['malam_avg']) ? $tempFile['malam_avg'] : '';
 
-        $this->pdf->setPaper('A4', 'landscape');
-        $this->pdf->filename = "report-automation.pdf";
-
-        // $this->pdf->load_view('reporting/rpdf', $reportData); 
-        $this->pdf->load_view('reporting/rpdfAttachment', $reportData); 
-        die();
+        if($type == 'export'){
+            $this->pdf->setPaper('A4', 'landscape');
+            $this->pdf->filename = "report-automation.pdf";
+            $this->pdf->load_view('reporting/rpdf', $reportData); 
+            //$this->pdf->load_view('reporting/rpdfAttachment', $reportData); 
+        }
+        
         if($this->agent->is_mobile()){
 			$this->load->view('template/header', $this->data_header);
             $this->load->view('reporting/indexpdf',$reportData); 
+            $this->load->view('template/footer', $this->data_footer);
 		}else{
 			$this->load->view('template/header', $this->data_header);
             $this->load->view('reporting/indexpdf',$reportData); 
+            $this->load->view('template/footer', $this->data_footer);
 		} 
 
     }

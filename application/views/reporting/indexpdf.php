@@ -109,7 +109,7 @@ p{
 }
 </style> 
 
-<form id="reportForm" method="POST" action="">
+<form id="reportForm" method="POST" action="" autocomplete="off">
     <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
     <input type="hidden" name="old_date" value="<?=@$datetime.$shift?>" style="display: none">
 
@@ -120,13 +120,13 @@ p{
                     <h2 class="ml-5">Report Automation</h2>
                 </div>
                 <div class="col-12 pr-4"> 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-2">Type</label> 
                         <select class="form-control col-10" id="exampleFormControlSelect1" name="type">
                             <option value="report" <?php if(@$type == "report") { echo "selected"; }?> >Report</option>
                             <option value="attachment"<?php if(@$type == "attachment") { echo "selected"; }?> >Attachment</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
                         <label class="col-2">Shift</label> 
                         <select class="form-control col-10" id="exampleFormControlSelect1" name="shift">
@@ -153,8 +153,12 @@ p{
                     </div>
                     <div class="row">
                         <label class="col-2"></label>
-                        <div class="col-10 px-0">
-                            <button class="btn btn-primary btn-block" type="submit">Generate</button>
+                        <div class="col-4 px-0">
+                            <input  class="btn btn-primary btn-block" type="submit" value="Generate" name="type">
+                        </div>
+                        <label class="col-2"></label>
+                        <div class="col-4 px-0">
+                            <input  class="btn btn-secondary btn-block" type="submit" value="Export" name="type">
                         </div>
                     </div>		
                 </div>
@@ -162,89 +166,6 @@ p{
         </div>										
     </div> 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <?php for ($i=0; $i < 21; $i++):?>
-                                <td style="border-color:#fff!important;border-bottom:#000!important"></td>
-                            <?php endfor;?>
-                        </tr>
-                        <tr class="text-center vc">
-                            <td colspan="3" rowspan="3" class="text-center vc">
-                                <h3><strong>PT. TMMIN</strong></h3>
-                                <h3>Casting Division</h3>
-                                <h3>Produksi II</h3>
-                            </td>
-                            <td colspan="12" rowspan="3" class="text-center vc">
-                                <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
-                                <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
-                            </td>
-                            <td colspan="3">
-                                <p>Hari / Tanggal</p>
-                            </td>
-                            <td colspan="2">
-                                <p><?= date('D / d-m-Y ',strtotime($datetime))?></p>
-                            </td>
-                        </tr>
-                        <tr class="text-center vc">
-                            <td colspan="2">
-                                <p>PIC</p>
-                            </td>
-                            <td colspan="3">
-                                <p>Shift</p>
-                            </td>
-                        </tr>
-                        <tr class="text-center vc">
-                            <td colspan="2" class="p-0">
-                                <p><input type="text" style="max-width:70px" name="pic_name" value="<?= @$pic_name ?>"/></p>
-                            </td>
-                            <td colspan="1"><p><?= strtoupper($color) ?></p></td>
-                            <td colspan="2"><p><?= strtoupper($shift) ?></p></td>
-                        </tr>
-                        <tr class="text-center vc">
-                            <td colspan="20" class="p-0">
-                                <br>
-                                <p><strong><h1>LAMPIRAN FOTO AND VISUAL SAMPLING CHECK</h1></strong></p>
-                                <br>
-                            </td> 
-                        </tr>
-                        <tr class="text-center vc">
-                            <td class="p-0">
-                                <p>Jam</p>
-                            </td>
-                            <td colspan="10" class="p-0">
-                                <p>Lampiran Foto</p>
-                            </td>
-                            <td colspan="6" class="p-0">
-                                <p>Standard Perbandingan</p>
-                            </td>
-                            <td colspan="3" class="p-0">
-                                <p>Judgement</p>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for ($i=0; $i < 21; $i++):?>
-                            <tr class="text-center vc">
-                                <td class="p-0">
-                                    <p>hh:mm:ss</p>
-                                </td>
-                                <td colspan="10" class="p-0">
-                                </td>
-                                <td colspan="6" class="p-0">
-                                </td>
-                                <td colspan="3" class="p-0">
-                                </td>
-                            </tr>
-                        <?php endfor;?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -265,7 +186,7 @@ p{
                                 <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
                                 <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
                             </td>
-                            <td colspan="2">
+                            <td colspan="3">
                                 <p>Hari / Tanggal</p>
                             </td>
                             <td colspan="4">
@@ -273,18 +194,18 @@ p{
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="3">
                                 <p>PIC</p>
                             </td>
-                            <td colspan="4">
+                            <td colspan="3">
                                 <p>Shift</p>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="p-0">
-                                <p><input type="text" style="max-width:70px" name="pic_name" value="<?= @$pic_name ?>"/></p>
+                            <td colspan="3" class="p-0">
+                                <p><input type="text" style="max-width:70px" name="pic_names" value="<?= @$pic_names ?>"/></p>
                             </td>
-                            <td colspan="2"><p><?= strtoupper($color) ?></p></td>
+                            <td colspan=""><p><?= strtoupper($color) ?></p></td>
                             <td colspan="2"><p><?= strtoupper($shift) ?></p></td>
                         </tr>
                     </thead>
@@ -348,8 +269,8 @@ p{
                             <td class="p-0"><p><input type="text" style="max-width:50px" name="stdhigh[]" value="<?= @$stdhigh[0] ?>"/></p></td>
                             <td class="p-0"><p><input type="text" style="max-width:50px" name="stdhigh[]" value="<?= @$stdhigh[1] ?>"/></p></td>
                         </tr>
-                            <tr>
-                                <?php for ($i = 0 ; $i < count($arrayMaster) ; $i++):?>
+                            <?php for ($i = 0 ; $i < count($arrayMaster) ; $i++):?>
+                            <tr> 
                                 <?php $data = $arrayMaster[$i]; ?>
                                 <?php if($i==0):?>
                                 <td rowspan="<?=count($arrayMaster)?>" style="padding-top:6rem"><p class="rotate"><strong>JAM</strong></p></td>
@@ -694,6 +615,90 @@ p{
                     </tbody>
                 </table>
                 <!-- 3rd Table -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <?php for ($i=0; $i < 21; $i++):?>
+                                <td style="border-color:#fff!important;border-bottom:#000!important"></td>
+                            <?php endfor;?>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="3" rowspan="3" class="text-center vc">
+                                <h3><strong>PT. TMMIN</strong></h3>
+                                <h3>Casting Division</h3>
+                                <h3>Produksi II</h3>
+                            </td>
+                            <td colspan="12" rowspan="3" class="text-center vc">
+                                <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
+                                <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
+                            </td>
+                            <td colspan="3">
+                                <p>Hari / Tanggal</p>
+                            </td>
+                            <td colspan="2">
+                                <p><?= date('D / d-m-Y ',strtotime($datetime))?></p>
+                            </td>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="2">
+                                <p>PIC</p>
+                            </td>
+                            <td colspan="3">
+                                <p>Shift</p>
+                            </td>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="2" class="p-0">
+                                <p><input type="text" style="max-width:70px" name="pic_name" value="<?= @$pic_name ?>"/></p>
+                            </td>
+                            <td colspan="2"><p><?= strtoupper($color) ?></p></td>
+                            <td colspan=""><p><?= strtoupper($shift) ?></p></td>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="20" class="p-0">
+                                <br>
+                                <p><strong><h1>LAMPIRAN FOTO AND VISUAL SAMPLING CHECK</h1></strong></p>
+                                <br>
+                            </td> 
+                        </tr>
+                        <tr class="text-center vc">
+                            <td class="p-0">
+                                <p>Jam</p>
+                            </td>
+                            <td colspan="10" class="p-0">
+                                <p>Lampiran Foto</p>
+                            </td>
+                            <td colspan="6" class="p-0">
+                                <p>Standard Perbandingan</p>
+                            </td>
+                            <td colspan="3" class="p-0">
+                                <p>Judgement</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php for ($i=0; $i < 21; $i++):?>
+                            <tr class="text-center vc">
+                                <td class="p-0">
+                                    <p>hh:mm:ss</p>
+                                </td>
+                                <td colspan="10" class="p-0">
+                                </td>
+                                <td colspan="6" class="p-0">
+                                </td>
+                                <td colspan="3" class="p-0">
+                                </td>
+                            </tr>
+                        <?php endfor;?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
