@@ -8,6 +8,9 @@ input{
     border:none;  
     padding-left:.25rem;
 }
+.form-check > input{
+    width:auto!important;
+}
 .pt-custom-1{
     height:90px;
     padding-top:.5rem!important;
@@ -95,8 +98,8 @@ input{
     font-size: 11px;
     padding: 0px 3px 0px 3px;
 }
-h1 { font-family: Calibri; font-size: 18px; font-style: normal; font-variant: normal; line-height: 15.4px; } 
-h3 { font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+h1 { margin-bottom:0px!important;font-family: Calibri; font-size: 18px; font-style: normal; font-variant: normal; line-height: 15.4px; } 
+h3 { margin-bottom:0px!important;font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
 p { font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 15px; } 
 .b-white{
     border-color:#fff!important
@@ -110,13 +113,20 @@ p{
     <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
     <input type="hidden" name="old_date" value="<?=@$datetime.$shift?>" style="display: none">
 
-    <div class="">
+    <div class="py-4">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5 px-2">
                     <h2 class="ml-5">Report Automation</h2>
                 </div>
-                <div class="col-12"> 
+                <div class="col-12 pr-4"> 
+                    <div class="form-group row">
+                        <label class="col-2">Type</label> 
+                        <select class="form-control col-10" id="exampleFormControlSelect1" name="type">
+                            <option value="report" <?php if(@$type == "report") { echo "selected"; }?> >Report</option>
+                            <option value="attachment"<?php if(@$type == "attachment") { echo "selected"; }?> >Attachment</option>
+                        </select>
+                    </div>
                     <div class="form-group row">
                         <label class="col-2">Shift</label> 
                         <select class="form-control col-10" id="exampleFormControlSelect1" name="shift">
@@ -158,17 +168,100 @@ p{
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <?php for ($i=0; $i < 21; $i++):?>
+                                <td style="border-color:#fff!important;border-bottom:#000!important"></td>
+                            <?php endfor;?>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="3" rowspan="3" class="text-center vc">
+                                <h3><strong>PT. TMMIN</strong></h3>
+                                <h3>Casting Division</h3>
+                                <h3>Produksi II</h3>
+                            </td>
+                            <td colspan="12" rowspan="3" class="text-center vc">
+                                <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
+                                <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
+                            </td>
+                            <td colspan="3">
+                                <p>Hari / Tanggal</p>
+                            </td>
+                            <td colspan="2">
+                                <p><?= date('D / d-m-Y ',strtotime($datetime))?></p>
+                            </td>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="2">
+                                <p>PIC</p>
+                            </td>
+                            <td colspan="3">
+                                <p>Shift</p>
+                            </td>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="2" class="p-0">
+                                <p><input type="text" style="max-width:70px" name="pic_name" value="<?= @$pic_name ?>"/></p>
+                            </td>
+                            <td colspan="1"><p><?= strtoupper($color) ?></p></td>
+                            <td colspan="2"><p><?= strtoupper($shift) ?></p></td>
+                        </tr>
+                        <tr class="text-center vc">
+                            <td colspan="20" class="p-0">
+                                <br>
+                                <p><strong><h1>LAMPIRAN FOTO AND VISUAL SAMPLING CHECK</h1></strong></p>
+                                <br>
+                            </td> 
+                        </tr>
+                        <tr class="text-center vc">
+                            <td class="p-0">
+                                <p>Jam</p>
+                            </td>
+                            <td colspan="10" class="p-0">
+                                <p>Lampiran Foto</p>
+                            </td>
+                            <td colspan="6" class="p-0">
+                                <p>Standard Perbandingan</p>
+                            </td>
+                            <td colspan="3" class="p-0">
+                                <p>Judgement</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php for ($i=0; $i < 21; $i++):?>
+                            <tr class="text-center vc">
+                                <td class="p-0">
+                                    <p>hh:mm:ss</p>
+                                </td>
+                                <td colspan="10" class="p-0">
+                                </td>
+                                <td colspan="6" class="p-0">
+                                </td>
+                                <td colspan="3" class="p-0">
+                                </td>
+                            </tr>
+                        <?php endfor;?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
                             <?php for ($i=0; $i < 27; $i++):?>
                                 <td style="border-color:#fff!important;border-bottom:#000!important"></td>
                             <?php endfor;?>
                         </tr>
                         <tr>
-                            <td colspan="4" rowspan="3" class="text-center">
+                            <td colspan="4" rowspan="3" class="text-center vc">
                                 <h3><strong>PT. TMMIN</strong></h3>
                                 <h3>Casting Division</h3>
                                 <h3>Produksi II</h3>
                             </td>
-                            <td colspan="17" rowspan="3" class="text-center">
+                            <td colspan="17" rowspan="3" class="text-center vc">
                                 <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
                                 <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
                             </td>

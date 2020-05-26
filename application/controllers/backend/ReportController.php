@@ -248,16 +248,15 @@ class ReportController extends Public_Controller {
         $this->pdf->setPaper('A4', 'landscape');
         $this->pdf->filename = "report-automation.pdf";
 
-        //$this->load->view('reporting/rpdf', $reportData); 
-        
+        // $this->pdf->load_view('reporting/rpdf', $reportData); 
+        $this->pdf->load_view('reporting/rpdfAttachment', $reportData); 
+        die();
         if($this->agent->is_mobile()){
 			$this->load->view('template/header', $this->data_header);
-            $this->load->view('reporting/indexpdf',$reportData);
-			
+            $this->load->view('reporting/indexpdf',$reportData); 
 		}else{
 			$this->load->view('template/header', $this->data_header);
-            $this->load->view('reporting/indexpdf',$reportData);
-			
+            $this->load->view('reporting/indexpdf',$reportData); 
 		} 
 
     }
