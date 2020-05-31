@@ -15,10 +15,10 @@ class ReportController extends Public_Controller {
         "Conveying", "ACCUM"]; 
 
         $this->codes = ["(T1/S1)", "(T2/S2)", "(T3/S3)", "(T4/S4)", "", "MOT2", "MOT3", "PT4", "MOT4",
-            "PT6", "MOT6", "INV1", "PT5", "MOT5", "PT7", "MOT7", "Tc2", "Tc3", "Tc4", "Tc5", "Tc6", "MOT8", "T10b", "", ""];
+            "PT6", "MOT6", "INV1", "PT5", "MOT5", "PT7", "MOT7", "Tc2", "Tc3", "Tc4", "Tc5", "Tc6", "MOT8", "T10b", "-", "-"];
 
         $this->units = ["°C","°C","°C","°C","mmAq","%","%","mmAq","%","mmAq","%","%","mmAq","%","mmAq"
-        ,"%","°C","°C","°C","°C","°C","%","°C","",""];
+        ,"%","°C","°C","°C","°C","°C","%","°C","-","-"];
 
         // check login nanti disini
         // if (!$this->session->userdata('login')) {

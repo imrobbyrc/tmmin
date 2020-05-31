@@ -3,6 +3,11 @@
 .vc {
     vertical-align: middle !important;
 }
+.custom-textarea{
+    width:100%;
+    border:none;  
+    padding-left:.25rem;
+}
 input{
     width:100%;
     border:none;  
@@ -74,6 +79,9 @@ input{
 }
 .pt-custom-21{
     padding-top:.75rem!important;
+}
+.solidb{
+    border:2px solid #000 !important;
 }
 .pt-custom-22{
     padding-top:.5rem!important;
@@ -149,15 +157,14 @@ p{
                     </div>
                     <div class="form-group row">
                         <label class="col-2">Date</label>
-                        <input type="text" class="form-control col-10" id="datepicker" placeholder="yyyy-mm-dd" name="datetime" value="<?= $datetime ?>"> 
+                        <input type="text" class="form-control col-10" id="datepicker" name="datetime" value="<?= $datetime ?>"> 
                     </div>
-                    <div class="row">
-                        <label class="col-2"></label>
-                        <div class="col-4 px-0">
+                    <div class="row"> 
+                        <div class="col-2"></div>
+                        <div class="col-5 pl-0">
                             <input  class="btn btn-primary btn-block" type="submit" value="Generate" name="type">
-                        </div>
-                        <label class="col-2"></label>
-                        <div class="col-4 px-0">
+                        </div> 
+                        <div class="col-5 pr-0">
                             <input  class="btn btn-secondary btn-block" type="submit" value="Export" name="type">
                         </div>
                     </div>		
@@ -166,7 +173,7 @@ p{
         </div>										
     </div> 
 
-    <div class="container">
+    <div class="container my-4">
         <div class="row">
             <div class="col-12">
                 <table class="table table-bordered">
@@ -177,36 +184,36 @@ p{
                             <?php endfor;?>
                         </tr>
                         <tr>
-                            <td colspan="4" rowspan="3" class="text-center vc">
+                            <td colspan="4" rowspan="3" class="text-center vc solidb">
                                 <h3><strong>PT. TMMIN</strong></h3>
                                 <h3>Casting Division</h3>
                                 <h3>Produksi II</h3>
                             </td>
-                            <td colspan="17" rowspan="3" class="text-center vc">
+                            <td colspan="17" rowspan="3" class="text-center vc solidb">
                                 <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
                                 <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
                             </td>
-                            <td colspan="3">
+                            <td colspan="3" class="solidb">
                                 <p>Hari / Tanggal</p>
                             </td>
-                            <td colspan="4">
+                            <td colspan="4" class=" solidb">
                                 <p><?= date('D / d-m-Y ',strtotime($datetime))?></p>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td colspan="3" class=" solidb">
                                 <p>PIC</p>
                             </td>
-                            <td colspan="3">
+                            <td colspan="3" class=" solidb">
                                 <p>Shift</p>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="p-0">
+                            <td colspan="3" class="p-0 solidb">
                                 <p><input type="text" style="max-width:70px" name="pic_names" value="<?= @$pic_names ?>"/></p>
                             </td>
-                            <td colspan=""><p><?= strtoupper($color) ?></p></td>
-                            <td colspan="2"><p><?= strtoupper($shift) ?></p></td>
+                            <td colspan="" class=" solidb"><p><?= strtoupper($color) ?></p></td>
+                            <td colspan="2" class=" solidb"><p><?= strtoupper($shift) ?></p></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -258,16 +265,20 @@ p{
                             <?php foreach($standardValue as $row):?>
                             <td class="text-right"><p><?= $row['lowval'] ?></p></td>
                             <?php endforeach;?>
-                            <td class="p-0"><p><input type="text" style="max-width:50px" name="stdlow[]" value="<?= @$stdlow[0] ?>"/></p></td>
-                            <td class="p-0"><p><input type="text" style="max-width:50px" name="stdlow[]" value="<?= @$stdlow[1] ?>"/></p></td>
+                            <!-- <td class="p-0"><p><input type="text" style="max-width:50px" name="stdlow[]" value="<?= @$stdlow[0] ?>"/></p></td>
+                            <td class="p-0"><p><input type="text" style="max-width:50px" name="stdlow[]" value="<?= @$stdlow[1] ?>"/></p></td> -->
+                            <td class="p-0 text-center"><p>-</p></td>
+                            <td class="p-0 text-center"><p>-</p></td>
                         </tr>
                         <tr>
                             <td class="text-center"><p><strong>HIGH</strong></p></td>
                             <?php foreach($standardValue as $row):?>
                             <td class="text-right"><p><?= $row['highval'] ?></p></td>
                             <?php endforeach;?>
-                            <td class="p-0"><p><input type="text" style="max-width:50px" name="stdhigh[]" value="<?= @$stdhigh[0] ?>"/></p></td>
-                            <td class="p-0"><p><input type="text" style="max-width:50px" name="stdhigh[]" value="<?= @$stdhigh[1] ?>"/></p></td>
+                            <!-- <td class="p-0"><p><input type="text" style="max-width:50px" name="stdhigh[]" value="<?= @$stdhigh[0] ?>"/></p></td>
+                            <td class="p-0"><p><input type="text" style="max-width:50px" name="stdhigh[]" value="<?= @$stdhigh[1] ?>"/></p></td> -->
+                            <td class="p-0 text-center"><p>-</p></td>
+                            <td class="p-0 text-center"><p>-</p></td>
                         </tr>
                             <?php for ($i = 0 ; $i < count($arrayMaster) ; $i++):?>
                             <tr> 
@@ -318,7 +329,7 @@ p{
                                 <td colspan="2"><p><strong>Total</strong></p></td>
                                 <td colspan="4"><p><strong>Start Prod. : </strong></p></td>
                                 <td colspan="7" class="p-0">
-                                    <p><input placeholder="07 : 54 : 00" type="text" name="time_prod[]" value="<?= @$time_prod[0] ?>"/></p>
+                                    <p><input id="start_prod" type="text" name="time_prod[]" value="<?= @$time_prod[0] ?>"/></p>
                                 </td>
                         </tr>
                         <tr class="text-center"> 
@@ -341,7 +352,7 @@ p{
                                     <p><input type="text" name="lng[]" value="<?= @$lng[5] ?>"/></p>
                                 </td>
                                 <td colspan="4"><p><strong>Finish Prod. : </strong></p></td>
-                                <td colspan="7" class="p-0"><p><input placeholder="formatnya (hh : mm : ss)" type="text" name="time_prod[]" value="<?= @$time_prod[1] ?>" /></p></td>
+                                <td colspan="7" id="end_prod" class="p-0"><p><input type="text" name="time_prod[]" value="<?= @$time_prod[1] ?>" /></p></td>
                         </tr>
                     </tbody>
                 </table>
@@ -455,7 +466,7 @@ p{
                     <tbody> 
                         <tr class="text-center"> 
                             <td colspan="3"><p><strong>ITEM</strong></p></td> 
-                            <td colspan="1"><p><strong>STD IL</strong></p></td> 
+                            <td colspan="1" width="100px"><p><strong>STD IL</strong></p></td> 
                             <td colspan="1"><p><strong>JAM</strong></p></td> 
                             <td colspan="1"><p><strong>IL</strong></p></td> 
                             <td colspan="1"><p><strong>Rata2</strong></p></td> 
@@ -467,7 +478,8 @@ p{
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <p><input type="text" name="std_il[]" value="<?= @$std_il[0] ?>"/></p>
+                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[0] ?>"/></p> -->
+                                <p><?= @$std_il[0] ?></p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[0] ?>"/></p>
@@ -503,12 +515,16 @@ p{
                                 <p><input type="text" name="malam_il[]" value="<?= @$malam_il[1] ?>"/></p>
                             </td> 
                             <td colspan="9" style="border-top:0px;border-bottom:0px"><p></p></td> 
-                            <td colspan="2" class="text-center"><p>Disetujui</p></td> <td colspan="2" class="text-center"><p>Disetujui</p></td> <td colspan="2" class="text-center"><p>Dicheck</p></td> <td colspan="2" class="text-center"><p>Dibuat</p></td> 
+                            <td width="100px" colspan="2" class="text-center"><p>Disetujui</p></td> 
+                            <td width="100px" colspan="2" class="text-center"><p>Disetujui</p></td> 
+                            <td width="100px" colspan="2" class="text-center"><p>Dicheck</p></td> 
+                            <td width="100px" colspan="2" class="text-center"><p>Dibuat</p></td> 
                         </tr>
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR RECLAMER</p></td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <p><input type="text" name="std_il[]" value="<?= @$std_il[1] ?>"/></p>
+                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[1] ?>"/></p> -->
+                                <p><?= @$std_il[1] ?></p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[2] ?>"/></p>
@@ -564,7 +580,8 @@ p{
                             <td colspan="2" rowspan="2" class="text-center vc"><p>PASIR RCS</p></td> 
                             <td colspan="1" class="text-center"><p>A</p></td> 
                             <td colspan="1" class="p-0">
-                                <p><input type="text" name="std_il[]" value="<?= @$std_il[2] ?>"/></p>
+                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[2] ?>"/></p> -->
+                                <p><?= @$std_il[2] ?></p>
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[4] ?>"/></p>
@@ -589,7 +606,8 @@ p{
                         <tr> 
                             <td colspan="1" class="text-center"><p>STR</p></td> 
                             <td colspan="1" class="p-0">
-                                <p><input type="text" name="std_il[]" value="<?= @$std_il[3] ?>"/></p>
+                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[3] ?>"/></p> -->
+                                <p><?= @$std_il[3] ?></p>
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[5] ?>"/></p>
@@ -618,82 +636,76 @@ p{
             </div>
         </div>
     </div>
-
-    <div class="container">
+    <hr style="border-color:#000!important">
+    <div class="container my-4">
         <div class="row">
             <div class="col-12">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <?php for ($i=0; $i < 21; $i++):?>
+                            <?php for ($i=0; $i < 27; $i++):?>
                                 <td style="border-color:#fff!important;border-bottom:#000!important"></td>
                             <?php endfor;?>
                         </tr>
-                        <tr class="text-center vc">
-                            <td colspan="3" rowspan="3" class="text-center vc">
+                        <tr>
+                            <td colspan="4" rowspan="3" class="text-center vc solidb">
                                 <h3><strong>PT. TMMIN</strong></h3>
                                 <h3>Casting Division</h3>
                                 <h3>Produksi II</h3>
                             </td>
-                            <td colspan="12" rowspan="3" class="text-center vc">
+                            <td colspan="17" rowspan="3" class="text-center vc solidb">
                                 <p><strong><h1>Laporan Produksi dan Check Temperature Furnace</h1></strong></p>
                                 <p><h1><strong>CKS - AZC300 - RC015</strong> (REPORT AUTO GENERATE)</h1></p>
                             </td>
-                            <td colspan="3">
+                            <td colspan="3" class="solidb">
                                 <p>Hari / Tanggal</p>
                             </td>
-                            <td colspan="2">
+                            <td colspan="4" class=" solidb">
                                 <p><?= date('D / d-m-Y ',strtotime($datetime))?></p>
                             </td>
                         </tr>
-                        <tr class="text-center vc">
-                            <td colspan="2">
+                        <tr>
+                            <td colspan="3" class=" solidb">
                                 <p>PIC</p>
                             </td>
-                            <td colspan="3">
+                            <td colspan="3" class=" solidb">
                                 <p>Shift</p>
                             </td>
                         </tr>
-                        <tr class="text-center vc">
-                            <td colspan="2" class="p-0">
-                                <p><input type="text" style="max-width:70px" name="pic_name" value="<?= @$pic_name ?>"/></p>
+                        <tr>
+                            <td colspan="3" class="p-0 solidb">
+                                <p><input type="text" style="max-width:70px" name="pic_names" value="<?= @$pic_names ?>"/></p>
                             </td>
-                            <td colspan="2"><p><?= strtoupper($color) ?></p></td>
-                            <td colspan=""><p><?= strtoupper($shift) ?></p></td>
-                        </tr>
-                        <tr class="text-center vc">
-                            <td colspan="20" class="p-0">
-                                <br>
-                                <p><strong><h1>LAMPIRAN FOTO AND VISUAL SAMPLING CHECK</h1></strong></p>
-                                <br>
-                            </td> 
-                        </tr>
-                        <tr class="text-center vc">
-                            <td class="p-0">
-                                <p>Jam</p>
-                            </td>
-                            <td colspan="10" class="p-0">
-                                <p>Lampiran Foto</p>
-                            </td>
-                            <td colspan="6" class="p-0">
-                                <p>Standard Perbandingan</p>
-                            </td>
-                            <td colspan="3" class="p-0">
-                                <p>Judgement</p>
-                            </td>
+                            <td colspan="" class=" solidb" width="80px"><p><?= strtoupper($color) ?></p></td>
+                            <td colspan="2" class=" solidb" width="50px"><p><?= strtoupper($shift) ?></p></td>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php for ($i=0; $i < 21; $i++):?>
+                        <tr class="text-center vc" style="border-bottom:2px solid #000;border-right:2px solid #000;border-left:2px solid #000;">
+                            <td colspan="4" class="p-0">
+                                <p>Jam</p>
+                            </td>
+                            <td colspan="8" class="p-0">
+                                <p>Lampiran Foto</p>
+                            </td>
+                            <td colspan="9" class="p-0">
+                                <p>Standard Perbandingan</p>
+                            </td>
+                            <td colspan="7" class="p-0">
+                                <p>Judgement</p>
+                            </td>
+                        </tr>
+                        <?php for ($i=0; $i < 27; $i++):?>
                             <tr class="text-center vc">
-                                <td class="p-0">
+                                <td colspan="4" class="p-0">
                                     <p>hh:mm:ss</p>
                                 </td>
-                                <td colspan="10" class="p-0">
+                                <td colspan="8" class="p-0">
                                 </td>
-                                <td colspan="6" class="p-0">
+                                <td colspan="9" class="p-0">
                                 </td>
-                                <td colspan="3" class="p-0">
+                                <td colspan="7" class="p-0">
+                                    <textarea name="" id="" cols="30" rows="10" class="custom-textarea"></textarea>
                                 </td>
                             </tr>
                         <?php endfor;?>
