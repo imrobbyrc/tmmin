@@ -454,7 +454,7 @@ p {
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <p><?= @$std_il[0] ?></p>
+                                <p>≤ 0.20</p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><?= @$siang_jam[0] ?></p>
@@ -495,7 +495,7 @@ p {
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc" style="border-bottom:0px"><p>PASIR RECLAMER</p></td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2" style="border-bottom:0px">
-                                <p><?= @$std_il[1] ?></p>
+                                <p>< 0.13</p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><?= @$siang_jam[2] ?></p>
@@ -551,7 +551,7 @@ p {
                             <td colspan="2" rowspan="2" class="text-center vc" style="border-top:0px"><p>PASIR RCS</p></td> 
                             <td colspan="1" class="text-center" style="border-top:0px"><p>A</p></td> 
                             <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$std_il[2] ?></p>
+                                <p>≤ 1.90</p>
                             </td> 
                             <td colspan="1" class="p-0" style="border-top:0px">
                                 <p><?= @$siang_jam[4] ?></p>
@@ -576,7 +576,7 @@ p {
                         <tr> 
                             <td colspan="1" class="text-center"><p>STR</p></td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$std_il[3] ?></p>
+                                <p>≤ 2.2</p>
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><?= @$siang_jam[5] ?></p>

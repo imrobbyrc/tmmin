@@ -117,6 +117,7 @@ p{
 }
 </style> 
 
+<?php echo validation_errors(); ?>
 <form id="reportForm" method="POST" action="" autocomplete="off">
     <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
     <input type="hidden" name="old_date" value="<?=@$datetime.$shift?>" style="display: none">
@@ -137,7 +138,7 @@ p{
                     </div> -->
                     <div class="form-group row">
                         <label class="col-2">Shift</label> 
-                        <select class="form-control col-10" id="exampleFormControlSelect1" name="shift">
+                        <select class="form-control col-10" id="exampleFormControlSelect1" name="shift" required>
                             <option value="pagi" <?php if($shift == "pagi") { echo "selected"; }?> >Pagi</option>
                             <option value="malam"<?php if($shift == "malam") { echo "selected"; }?> >Malam</option>
                         </select>
@@ -145,19 +146,19 @@ p{
                     <div class="form-group row">
                         <label class="col-2">Color</label> 
                         <div class="col-10 pl-0">
-                            <div class="form-check form-check-inline mr-3 btn btn-danger">
-                                <input class="form-check-input" type="radio" name="color" id="red" value="red" <?php if($color == "red") { echo "checked"; }?> >
+                            <div class="form-check form-check-inline mr-3 btn btn-danger" >
+                                <input class="form-check-input" type="radio" name="color" id="red" value="red" <?php if($color == "red") { echo "checked"; }?> required>
                                 <label class="form-check-label" for="red">RED</label>
                             </div>
                             <div class="form-check form-check-inline btn btn-secondary">
-                                <input class="form-check-input" type="radio" name="color" id="white" value="white" <?php if($color == "white") { echo "checked"; }?> >
+                                <input class="form-check-input" type="radio" name="color" id="white" value="white" <?php if($color == "white") { echo "checked"; }?> required>
                                 <label class="form-check-label" for="white">WHITE</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-2">Date</label>
-                        <input type="text" class="form-control col-10" id="datepicker" name="datetime" value="<?= $datetime ?>"> 
+                        <input type="text" class="form-control col-10" id="datepicker" name="datetime" value="<?= $datetime ?>" required> 
                     </div>
                     <div class="row"> 
                         <div class="col-2"></div>
@@ -477,9 +478,8 @@ p{
                         </tr>
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[0] ?>"/></p> -->
-                                <p><?= @$std_il[0] ?></p>
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 text-center">
+                                <p>≤ 0.20</p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[0] ?>"/></p>
@@ -522,9 +522,8 @@ p{
                         </tr>
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR RECLAMER</p></td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[1] ?>"/></p> -->
-                                <p><?= @$std_il[1] ?></p>
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 text-center">
+                                <p>< 0.13</p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[2] ?>"/></p>
@@ -579,9 +578,8 @@ p{
                         <tr> 
                             <td colspan="2" rowspan="2" class="text-center vc"><p>PASIR RCS</p></td> 
                             <td colspan="1" class="text-center"><p>A</p></td> 
-                            <td colspan="1" class="p-0">
-                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[2] ?>"/></p> -->
-                                <p><?= @$std_il[2] ?></p>
+                            <td colspan="1" class="p-0 text-center">
+                                <!-- <p>59±1</p> --> <p>≤ 1.90</p>
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[4] ?>"/></p>
@@ -605,9 +603,8 @@ p{
                         </tr>
                         <tr> 
                             <td colspan="1" class="text-center"><p>STR</p></td> 
-                            <td colspan="1" class="p-0">
-                                <!-- <p><input type="text" name="std_il[]" value="<?= @$std_il[3] ?>"/></p> -->
-                                <p><?= @$std_il[3] ?></p>
+                            <td colspan="1" class="p-0 text-center">
+                                <p>≤ 2.2</p>
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><input type="text" name="siang_jam[]" value="<?= @$siang_jam[5] ?>"/></p>

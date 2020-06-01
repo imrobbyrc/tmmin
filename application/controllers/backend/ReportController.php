@@ -6,7 +6,8 @@ class ReportController extends Public_Controller {
         parent::__construct();
         $this->load->model('M_EquipDef');
         $this->load->model('M_EquipVal');
-        $this->load->library('Pdf'); 
+        $this->load->library('Pdf');
+        $this->load->library('form_validation'); 
 
         $this->fces = ["Fce Combustion", "Fce Outlet Sand",	"Fce Inlet Sand", "Top Temp. Fce",
         "Pressure",	"Damper Open",	"Damper Open", "Pressure",	"Damper Open", "Pressure",	
@@ -59,27 +60,30 @@ class ReportController extends Public_Controller {
             }
 
             foreach($dataSatuan as $key => $val){
-
-                foreach($datas as $data){
-                    $valueFix = $data->temp / $data->total_data; //data penjumlahan data dibagi banyak data
-                    if(substr($data->clock,11,2) == $row){
-
-                        if($data->params_uid == $key){
-                            $dataSatuan[$key] = round($valueFix,2);
-
-                        }
-
-                    } 
-                
+                $dataSatuan[$key] = "-";
+                if($datas != null){
+                    foreach($datas as $data){
+                        $valueFix = $data->temp / $data->total_data; //data penjumlahan data dibagi banyak data
+                        if(substr($data->clock,11,2) == $row){
+                            
+                            if($data->params_uid == $key){
+                                $dataSatuan[$key] = round($valueFix,2);
+    
+                            }
+    
+                        } 
+                        
+                    }
                 }
-
+                
             }
+            
+                
 
             $dataResult[] = $dataSatuan;
 
         }
 
-            
         //Standart Value
         $std = $this->db->query("SELECT param_id, lowval, highval, timestamp FROM furnace_std_val ev WHERE $queryTime")->result_array();
 
@@ -195,7 +199,12 @@ class ReportController extends Public_Controller {
 
         if($_POST)
         {
-            
+            //validate date & shift
+            $this->form_validation->set_rules('datetime','Date','required');
+            $this->form_validation->set_rules('shift','Shift','required');
+            $this->form_validation->set_rules('color','Color','required');
+            //$this->form_validation->set_rules('old_date','Date','required');
+
             $dbData = $this->getData($shift,$datetime);
             $stdResult = $dbData['standardValue'];
             $alarmResult = $dbData['alarm'];
@@ -246,7 +255,18 @@ class ReportController extends Public_Controller {
         $reportData['malam_il'] = isset($tempFile['malam_il']) ? $tempFile['malam_il'] : '';
         $reportData['malam_avg'] = isset($tempFile['malam_avg']) ? $tempFile['malam_avg'] : '';
 
+
+        if($this->form_validation->run() == FALSE){
+            //redirect($_SERVER['HTTP_REFERER']);
+            $this->load->view('template/header', $this->data_header);
+            $this->load->view('reporting/indexpdf',$reportData); 
+            $this->load->view('template/footer', $this->data_footer);
+        }
+
         if($type == 'export'){
+
+            $this->cache->delete($datetime.$shift);
+
             $this->pdf->setPaper('A4', 'landscape');
             $this->pdf->filename = "report-automation.pdf";
             $this->pdf->load_view('reporting/rpdf', $reportData); 
