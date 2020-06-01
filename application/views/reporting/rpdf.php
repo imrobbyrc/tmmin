@@ -186,10 +186,10 @@ p {
                         </tr>
                         <tr>
                             <td colspan="2" class="p-0">
-                                <p><?= @$pic_names ?></p>
+                                <p><?= @$pic_names?>&nbsp;</p>
                             </td>
-                            <td colspan="2"><p><?= strtoupper($color) ?></p></td>
-                            <td colspan="2"><p><?= strtoupper($shift) ?></p></td>
+                            <td colspan="2"><p><?= strtoupper($color)?>&nbsp;</p></td>
+                            <td colspan="2"><p><?= strtoupper($shift)?>&nbsp;</p></td>
                         </tr>
                     </thead>
                 <tbody>
@@ -252,20 +252,20 @@ p {
                         <td rowspan="2" class="text-center vc"><p><strong>STD.</strong></p></td>
                         <td class="text-center"><p><strong>LOW</strong></p></td>
                         <?php foreach($standardValue as $row):?>
-                        <td class="text-right"><p><?= $row['lowval'] ?></p></td>
+                        <td class="text-right"><p><?= $row['lowval']?>&nbsp;</p></td>
                         <?php endforeach;?>
-                        <!-- <td class="p-0"><p><?= @$stdlow[0] ?></p></td>
-                        <td class="p-0"><p><?= @$stdlow[1] ?></p></td> -->
+                        <!-- <td class="p-0"><p><?= @$stdlow[0]?>&nbsp;</p></td>
+                        <td class="p-0"><p><?= @$stdlow[1]?>&nbsp;</p></td> -->
                         <td class="p-0 text-center"><p>-</p></td>
                         <td class="p-0 text-center"><p>-</p></td>
                     </tr>
                     <tr>
                         <td class="text-center"><p><strong>HIGH</strong></p></td>
                         <?php foreach($standardValue as $row):?>
-                        <td class="text-right"><p><?= $row['highval'] ?></p></td>
+                        <td class="text-right"><p><?= $row['highval']?>&nbsp;</p></td>
                         <?php endforeach;?>
-                        <!-- <td class="p-0"><p><?= @$stdhigh[0] ?></p></td>
-                        <td class="p-0"><p><?= @$stdhigh[1] ?></p></td> -->
+                        <!-- <td class="p-0"><p><?= @$stdhigh[0]?>&nbsp;</p></td>
+                        <td class="p-0"><p><?= @$stdhigh[1]?>&nbsp;</p></td> -->
                         <td class="p-0 text-center"><p>-</p></td>
                         <td class="p-0 text-center"><p>-</p></td>
                     </tr>
@@ -300,10 +300,10 @@ p {
                         <td class="text-right"><?= $data["MOT8"]; ?></td>
                         <td class="text-right"><?= $data["T10b"]; ?></td>
                         <td class="p-0">
-                            <p><?= @$conveying[$i] ?></p>
+                            <p><?= @$conveying[$i]?>&nbsp;</p>
                         </td>
                         <td class="p-0">
-                            <p><?= @$accum[$i] ?></p>
+                            <p><?= @$accum[$i]?>&nbsp;</p>
                         </td>
                     </tr>
                     <?php endfor;?>
@@ -318,17 +318,17 @@ p {
                             <td colspan="2"><p><strong>Finish</strong></p></td>
                             <td colspan="2"><p><strong>Total</strong></p></td>
                             <td colspan="4"><p><strong>Start Prod. : </strong></p></td>
-                            <td colspan="7" class="p-0"><p><?= @$time_prod[0] ?></p></td>
+                            <td colspan="7" class="p-0"><p><?= @$time_prod[0]?>&nbsp;</p></td>
                     </tr>
                     <tr class="text-center"> 
-                            <td colspan="2" class="p-0"><p><?= @$lng[0] ?></p></td>
-                            <td colspan="2" class="p-0"><p><?= @$lng[1] ?></p></td>
-                            <td colspan="2" class="p-0"><p><?= @$lng[2] ?></p></td>
-                            <td colspan="2" class="p-0"><p><?= @$lng[3] ?></p></td>
-                            <td colspan="2" class="p-0"><p><?= @$lng[4] ?></p></td>
-                            <td colspan="2" class="p-0"><p><?= @$lng[5] ?></p></td>
+                            <td colspan="2" class="p-0"><p><?= @$lng[0]?>&nbsp;</p></td>
+                            <td colspan="2" class="p-0"><p><?= @$lng[1]?>&nbsp;</p></td>
+                            <td colspan="2" class="p-0"><p><?= @$lng[2]?>&nbsp;</p></td>
+                            <td colspan="2" class="p-0"><p><?= @$lng[3]?>&nbsp;</p></td>
+                            <td colspan="2" class="p-0"><p><?= @$lng[4]?>&nbsp;</p></td>
+                            <td colspan="2" class="p-0"><p><?= @$lng[5]?>&nbsp;</p></td>
                             <td colspan="4"><p><strong>Finish Prod. : </strong></p></td>
-                            <td colspan="7" class="p-0"><p><?= @$time_prod[1] ?></p></td>
+                            <td colspan="7" class="p-0"><p><?= @$time_prod[1]?>&nbsp;</p></td>
                     </tr>
                 </tbody>
                 </table>
@@ -338,7 +338,7 @@ p {
                     <thead>
                         <tr>
                             <?php for ($i=0; $i < 27; $i++):?>
-                                <td style="border-color:#fff!important;border-bottom:#000!important"><p></p></td>
+                                <td style="border-color:#fff!important;border-bottom:#000!important"></td>
                             <?php endfor;?>
                         </tr>
                         <tr class="text-center">
@@ -368,22 +368,22 @@ p {
                             <td colspan="2"><p><?=$row->duration;?></p></td>
                             <td colspan="5"><p><?=$row->alarm_msg;?></p></td>
                             <td colspan="6" class="p-0">
-                                <p><?= @$alarm_mslh[$i] ?></p>
+                                <p><?= @$alarm_mslh[$i]?>&nbsp;</p>
                             </td>
                             <td colspan="5" class="p-0">
-                                <p><?= @$alarm_solve[$i] ?></p>
+                                <p><?= @$alarm_solve[$i]?>&nbsp;</p>
                             </td>
                             <td colspan="2" class="p-0">
-                                <p><?= @$alarm_pic[$i] ?></p>
+                                <p><?= @$alarm_pic[$i]?>&nbsp;</p>
                             </td>
                             <td colspan="2" class="p-0">
-                                <p><?= @$alarm_hasil[$i] ?></p>
+                                <p><?= @$alarm_hasil[$i]?>&nbsp;</p>
                             </td>
                         </tr>
                         <?php $i++ ; endforeach;?>
                         <tr>
                             <td colspan="25" class="text-right"><p><strong>Total Line Stop : </strong></p></td>
-                            <td class="p-0"><p><?= @$line_stop ?></p></td>
+                            <td class="p-0"><p><?= @$line_stop?>&nbsp;</p></td>
                             <td><p>menit</p></td>
                         </tr>
                     </tbody>
@@ -402,41 +402,41 @@ p {
                             <td colspan="4" rowspan="3" class="text-center vc" style="border-bottom:2px solid #000"><p><strong>CHECK ANALYSIS</strong></p></td> 
                             <td colspan="2" style="border:none;border-top:1px solid #000000;border-bottom:1px solid #fff"><p><strong>CYCLE TIME</strong></p></td> 
                             <td colspan="3" style="border:none;border-top:1px solid #000000"><p>1 Tangki = 15 menit</p></td> 
-                            <td colspan="5" style="border:none;border-top:1px solid #000000;border-right:1px solid #000000"><p></p></td> 
+                            <td colspan="5" style="border:none;border-top:1px solid #000000;border-right:1px solid #000000"><p>&nbsp;</p></td> 
                             <td colspan="6" style="border:none;border-top:1px solid #000000"><p><strong>EFFICIENCY</strong></p></td> 
                             <td colspan="1" style="border:none;border-top:1px solid #000000"><p>=</p></td> 
                             <td colspan="1" style="border:none;border-top:1px solid #000000"><p>0.25 x</p></td> 
                             <td colspan="5" style="border:none;border-top:1px solid #000000;border-right:1px solid #000000"><p>T. Conveying / Running Hour  x  100%</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="2" style="border:none;border-bottom:1px solid #fff"><p></p></td> 
+                            <td colspan="2" style="border:none;border-bottom:1px solid #fff"><p>&nbsp;</p></td> 
                             <td colspan="3" style="border:none;border-bottom:1px solid #fff"><p>1 Tangki = 300 kg</p></td> 
-                            <td colspan="5" style="border:none;border-right:1px solid #000000"><p></p></td> 
-                            <td colspan="6" style="border:none"><p></p></td> 
+                            <td colspan="5" style="border:none;border-right:1px solid #000000"><p>&nbsp;</p></td> 
+                            <td colspan="6" style="border:none"><p>&nbsp;</p></td> 
                             <td colspan="1" style="border:none"><p>=</p></td> 
                             <td colspan="1" style="border:none"><p>0.25 x</p></td> 
                             <td colspan="1" style="border:none" class="p-0">
-                                <p><?= @$efficiency[0] ?></p>
+                                <p><?= @$efficiency[0]?>&nbsp;</p>
                             </td>
                             <td colspan="5" style="border:none;border-right:1px solid #000000"><p>Conveying  x  100%</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="2" style="border:none;border-bottom:2px solid #000000"><p></p></td> 
+                            <td colspan="2" style="border:none;border-bottom:2px solid #000000"><p>&nbsp;</p></td> 
                             <td colspan="3" style="border:none;border-bottom:2px solid #000000"><p>1 Jam = 1.2 Ton</p></td> 
-                            <td colspan="5" style="border:none;border-bottom:2px solid #000000;border-right:1px solid #000000"><p></p></td> 
-                            <td colspan="6" style="border:none;border-bottom:2px solid #000000"><p></p></td> 
+                            <td colspan="5" style="border:none;border-bottom:2px solid #000000;border-right:1px solid #000000"><p>&nbsp;</p></td> 
+                            <td colspan="6" style="border:none;border-bottom:2px solid #000000"><p>&nbsp;</p></td> 
                             <td colspan="1" style="border:none;border-bottom:2px solid #000000"><p>=</p></td> 
                             <td colspan="1" style="border:none;border-bottom:2px solid #000000" class="p-0">
-                                <p><?= @$efficiency[1] ?></p>
+                                <p><?= @$efficiency[1]?>&nbsp;</p>
                             </td>
                             <td colspan="1" style="border:none;border-bottom:2px solid #000000"><p>%</p></td> 
-                            <td colspan="5" style="border:none;border-bottom:2px solid #000000;border-right:1px solid #000000"><p></p></td> 
+                            <td colspan="5" style="border:none;border-bottom:2px solid #000000;border-right:1px solid #000000"><p>&nbsp;</p></td> 
                         </tr>
                         <tr class="text-center"> 
                             <td colspan="4" style="border-top:1px solid #fff"><p><strong>SHIFT</strong></p></td> 
                             <td colspan="3" style="border-top:1px solid #fff"><p><strong>SIANG : </strong></p></td> 
                             <td colspan="3" style="border-top:1px solid #fff"><p><strong>MALAM : </strong></p></td> 
-                            <td class="b-white" colspan="17"><p></p></td> 
+                            <td class="b-white" colspan="17"><p>&nbsp;</p></td> 
                         </tr>
                     </thead>
                     <tbody> 
@@ -449,7 +449,7 @@ p {
                             <td colspan="1"><p><strong>JAM</strong></p></td> 
                             <td colspan="1"><p><strong>IL</strong></p></td> 
                             <td colspan="1"><p><strong>Rata2</strong></p></td> 
-                            <td class="b-white" colspan="17"><p></p></td> 
+                            <td class="b-white" colspan="17"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
@@ -457,121 +457,121 @@ p {
                                 <p>≤ 0.20</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_jam[0] ?></p>
+                                <p><?= @$siang_jam[0]?>&nbsp;</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_il[0] ?></p>
+                                <p><?= @$siang_il[0]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <p><?= @$siang_avg[0] ?></p>
+                                <p><?= @$siang_avg[0]?>&nbsp;</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_jam[0] ?></p>
+                                <p><?= @$malam_jam[0]?>&nbsp;</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_il[0] ?></p>
+                                <p><?= @$malam_il[0]?>&nbsp;</p>
                             </td>
                             <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <p><?= @$malam_avg[0] ?></p>
+                                <p><?= @$malam_avg[0]?>&nbsp;</p>
                             </td>
-                            <td class="b-white" colspan="17" style="border-bottom:#000!important"><p></p></td> 
+                            <td class="b-white" colspan="17" style="border-bottom:#000!important"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_jam[1] ?></p>
+                                <p><?= @$siang_jam[1]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_il[1] ?></p>
+                                <p><?= @$siang_il[1]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_jam[1] ?></p>
+                                <p><?= @$malam_jam[1]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_il[1] ?></p>
+                                <p><?= @$malam_il[1]?>&nbsp;</p>
                             </td> 
-                            <td colspan="9" style="border:0px"><p></p></td> 
+                            <td colspan="9" style="border:0px"><p>&nbsp;</p></td> 
                             <td colspan="2" class="text-center" style="page-break-before:always"><p>Disetujui</p></td> <td colspan="2" class="text-center"><p>Disetujui</p></td> <td colspan="2" class="text-center"><p>Dicheck</p></td> <td colspan="2" class="text-center"><p>Dibuat</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="3" rowspan="2" class="text-center vc" style="border-bottom:0px"><p>PASIR RECLAMER</p></td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2" style="border-bottom:0px">
+                            <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR RECLAMER</p></td> 
+                            <td colspan="1" rowspan="2" class="p-0 pt-2">
                                 <p>< 0.13</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_jam[2] ?></p>
+                                <p><?= @$siang_jam[2]?>&nbsp;</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_il[2] ?></p>
+                                <p><?= @$siang_il[2]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2" style="border-bottom:0px">
-                                <p><?= @$siang_avg[1] ?></p>
+                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                                <p><?= @$siang_avg[1]?>&nbsp;</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_jam[2] ?></p>
+                                <p><?= @$malam_jam[2]?>&nbsp;</p>
                             </td>
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_il[2] ?></p>
+                                <p><?= @$malam_il[2]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" rowspan="2" class="p-0 pt-2" style="border-bottom:0px">
-                                <p><?= @$malam_avg[1] ?></p>
+                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                                <p><?= @$malam_avg[1]?>&nbsp;</p>
                             </td>
-                            <td  style="border:0px" colspan="9"><p></p></td>  
-                            <td colspan="2" rowspan="4"><p></p></td> 
-                            <td colspan="2" rowspan="4"><p></p></td> 
-                            <td colspan="2" rowspan="4"><p></p></td> 
-                            <td colspan="2" rowspan="4"><p></p></td> 
+                            <td  style="border:0px" colspan="9"><p>&nbsp;</p></td>  
+                            <td colspan="2" rowspan="4"><p>&nbsp;</p></td> 
+                            <td colspan="2" rowspan="4"><p>&nbsp;</p></td> 
+                            <td colspan="2" rowspan="4"><p>&nbsp;</p></td> 
+                            <td colspan="2" rowspan="4"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="1" class="p-0" style="border-bottom:0px">
-                                <p><?= @$siang_jam[3] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_jam[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-bottom:0px">
-                                <p><?= @$siang_il[3] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_il[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-bottom:0px">
-                                <p><?= @$malam_jam[3] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_jam[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-bottom:0px">
-                                <p><?= @$malam_il[3] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_il[3]?>&nbsp;</p>
                             </td> 
-                            <td class="b-white" colspan="9"><p></p></td> 
+                            <td class="b-white" colspan="9"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="3"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td colspan="1"><p></p></td> 
-                            <td class="b-white" colspan="9"><p></p></td> 
+                            <td colspan="3" class="text-center vc"><p>GFN PASIR RECLAMER</p></td>
+                            <td colspan="1"><p>59+1</p></td> 
+                            <td colspan="1"><p>&nbsp;</p></td> 
+                            <td colspan="1"><p>&nbsp;</p></td> 
+                            <td colspan="1"><p>&nbsp;</p></td> 
+                            <td colspan="1"><p>&nbsp;</p></td> 
+                            <td colspan="1"><p>&nbsp;</p></td> 
+                            <td colspan="1"><p>&nbsp;</p></td> 
+                            <td class="b-white" colspan="9"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="2" rowspan="2" class="text-center vc" style="border-top:0px"><p>PASIR RCS</p></td> 
-                            <td colspan="1" class="text-center" style="border-top:0px"><p>A</p></td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
+                            <td colspan="2" rowspan="2" class="text-center vc"><p>PASIR RCS</p></td> 
+                            <td colspan="1" class="text-center"><p>A</p></td> 
+                            <td colspan="1" class="p-0">
                                 <p>≤ 1.90</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$siang_jam[4] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_jam[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$siang_il[4] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_il[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$siang_avg[2] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_avg[2]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$malam_jam[4] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_jam[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$malam_il[4] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_il[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0" style="border-top:0px">
-                                <p><?= @$malam_avg[2] ?></p>
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_avg[2]?>&nbsp;</p>
                             </td> 
-                            <td class="b-white" colspan="9" style="border:0px"><p></p></td> 
+                            <td class="b-white" colspan="9" style="border:0px"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
                             <td colspan="1" class="text-center"><p>STR</p></td> 
@@ -579,28 +579,71 @@ p {
                                 <p>≤ 2.2</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_jam[5] ?></p>
+                                <p><?= @$siang_jam[5]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_il[5] ?></p>
+                                <p><?= @$siang_il[5]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$siang_avg[3] ?></p>
+                                <p><?= @$siang_avg[3]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_jam[5] ?></p>
+                                <p><?= @$malam_jam[5]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_il[5] ?></p>
+                                <p><?= @$malam_il[5]?>&nbsp;</p>
                             </td> 
                             <td colspan="1" class="p-0">
-                                <p><?= @$malam_avg[3] ?></p>
+                                <p><?= @$malam_avg[3]?>&nbsp;</p>
                             </td> 
-                            <td  style="border:0px" colspan="9"><p></p></td> 
+                            <td  style="border:0px" colspan="9"><p>&nbsp;</p></td> 
                             <td colspan="2" class="text-center"><p>SH</p></td> <td colspan="2" class="text-center"><p>LH</p></td> <td colspan="2" class="text-center"><p>GH</p></td> <td colspan="2" class="text-center"><p>OPR</p></td> 
                         </tr>
                     </tbody>
                 </table>
             <!-- 3rd Table -->
+
+            
+            <!-- 4th Table -->
+                <table class="waffle no-grid table" cellspacing="0" cellpadding="0" style="page-break-before: always;">
+                    <thead>
+                        <tr>
+                            <?php for ($i=0; $i < 27; $i++):?>
+                                <td style="border-color:#fff!important;border-bottom:#000!important"></td>
+                            <?php endfor;?>
+                        </tr>
+                        <tr class="text-center vc" style="border-bottom:2px solid #000;border-right:2px solid #000;border-left:2px solid #000;">
+                            <td colspan="4" class="p-0">
+                                <p>Jam</p>
+                            </td>
+                            <td colspan="8" class="p-0">
+                                <p>Lampiran Foto</p>
+                            </td>
+                            <td colspan="9" class="p-0">
+                                <p>Standard Perbandingan</p>
+                            </td>
+                            <td colspan="7" class="p-0">
+                                <p>Judgement</p>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php for ($i=0; $i < 27; $i++):?>
+                            <tr class="text-center vc">
+                                <td colspan="4" class="p-0">
+                                    <p>hh:mm:ss</p>
+                                </td>
+                                <td colspan="8" class="p-0">
+                                </td>
+                                <td colspan="9" class="p-0">
+                                </td>
+                                <td colspan="7" class="p-0" style="height:100px;">
+                                    <p></p>
+                                </td>
+                            </tr>
+                        <?php endfor;?>
+                    </tbody>
+                </table>
+            <!-- 4th Table -->
         </div>
         <?php //exit;?>

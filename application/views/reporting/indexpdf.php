@@ -211,7 +211,7 @@ p{
                         </tr>
                         <tr>
                             <td colspan="3" class="p-0 solidb">
-                                <p><input type="text" style="max-width:70px" name="pic_names" value="<?= @$pic_names ?>"/></p>
+                                <p><input type="text" name="pic_names" value="<?= @$pic_names ?>"/></p>
                             </td>
                             <td colspan="" class=" solidb"><p><?= strtoupper($color) ?></p></td>
                             <td colspan="2" class=" solidb"><p><?= strtoupper($shift) ?></p></td>
@@ -477,7 +477,7 @@ p{
                             <td class="b-white" colspan="17"><p></p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
+                            <td style="min-width:120px" colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2 text-center">
                                 <p>≤ 0.20</p>
                             </td>
@@ -544,10 +544,10 @@ p{
                                 <p><input type="text" name="malam_avg[]" value="<?= @$malam_avg[1] ?>" /></p>
                             </td>
                             <td style="border-top:0px;border-bottom:0px" colspan="9"><p></p></td>  
-                            <td colspan="2" rowspan="4"><p></p></td> 
-                            <td colspan="2" rowspan="4"><p></p></td> 
-                            <td colspan="2" rowspan="4"><p></p></td> 
-                            <td colspan="2" rowspan="4"><p></p></td> 
+                            <td colspan="2" rowspan="5"><p></p></td> 
+                            <td colspan="2" rowspan="5"><p></p></td> 
+                            <td colspan="2" rowspan="5"><p></p></td> 
+                            <td colspan="2" rowspan="5"><p></p></td> 
                         </tr>
                         <tr> 
                             <td colspan="1" class="p-0">
@@ -575,6 +575,31 @@ p{
                             <td colspan="1"><p></p></td> 
                             <td class="b-white" colspan="9"><p></p></td> 
                         </tr>
+                        <tr> 
+                            <td colspan="3" rowspan="1" class="text-center vc"><p>GFN PASIR RECLAMER</p></td>  
+                            <td colspan="1" class="p-0 text-center">
+                                <p>59±1</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><input type="text" name="[]" value="<?= @$variable[0] ?>"/></p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><input type="text" name="[]" value="<?= @$variable[0] ?>"/></p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><input type="text" name="[]" value="<?= @$variable[0] ?>"/></p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><input type="text" name="[]" value="<?= @$variable[0] ?>" /></p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><input type="text" name="[]" value="<?= @$variable[0] ?>"/></p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><input type="text" name="[]" value="<?= @$variable[0] ?>"/></p>
+                            </td> 
+                            <td class="b-white" colspan="9"><p></p></td> 
+                        </tr> 
                         <tr> 
                             <td colspan="2" rowspan="2" class="text-center vc"><p>PASIR RCS</p></td> 
                             <td colspan="1" class="text-center"><p>A</p></td> 
@@ -662,16 +687,16 @@ p{
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3" class=" solidb">
+                            <td colspan="3" class="solidb">
                                 <p>PIC</p>
                             </td>
-                            <td colspan="3" class=" solidb">
+                            <td colspan="3" class="solidb">
                                 <p>Shift</p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3" class="p-0 solidb">
-                                <p><input type="text" style="max-width:70px" name="pic_names" value="<?= @$pic_names ?>"/></p>
+                                <p><input type="text" name="pic_names" value="<?= @$pic_names ?>"/></p>
                             </td>
                             <td colspan="" class=" solidb" width="80px"><p><?= strtoupper($color) ?></p></td>
                             <td colspan="2" class=" solidb" width="50px"><p><?= strtoupper($shift) ?></p></td>
