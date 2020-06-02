@@ -186,7 +186,7 @@ p {
                         </tr>
                         <tr>
                             <td colspan="2" class="p-0">
-                                <p><?= @$pic_names?>&nbsp;</p>
+                                <p><?= @$pic_name?>&nbsp;</p>
                             </td>
                             <td colspan="2"><p><?= strtoupper($color)?>&nbsp;</p></td>
                             <td colspan="2"><p><?= strtoupper($shift)?>&nbsp;</p></td>
@@ -299,10 +299,10 @@ p {
                         <td class="text-right"><?= $data["Tc6"]; ?></td>
                         <td class="text-right"><?= $data["MOT8"]; ?></td>
                         <td class="text-right"><?= $data["T10b"]; ?></td>
-                        <td class="p-0">
+                        <td class="p-0 text-right">
                             <p><?= @$conveying[$i]?>&nbsp;</p>
                         </td>
-                        <td class="p-0">
+                        <td class="p-0 text-right">
                             <p><?= @$accum[$i]?>&nbsp;</p>
                         </td>
                     </tr>
@@ -495,7 +495,7 @@ p {
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR RECLAMER</p></td> 
                             <td colspan="1" rowspan="2" class="p-0 pt-2">
-                                <p>< 0.13</p>
+                                <p> . 0.13</p>
                             </td>
                             <td colspan="1" class="p-0">
                                 <p><?= @$siang_jam[2]?>&nbsp;</p>
@@ -538,21 +538,7 @@ p {
                         </tr>
                         <tr> 
                             <td colspan="3" class="text-center vc"><p>GFN PASIR RECLAMER</p></td>
-                            <td colspan="1"><p>59+1</p></td> 
-                            <td colspan="1"><p>&nbsp;</p></td> 
-                            <td colspan="1"><p>&nbsp;</p></td> 
-                            <td colspan="1"><p>&nbsp;</p></td> 
-                            <td colspan="1"><p>&nbsp;</p></td> 
-                            <td colspan="1"><p>&nbsp;</p></td> 
-                            <td colspan="1"><p>&nbsp;</p></td> 
-                            <td class="b-white" colspan="9"><p>&nbsp;</p></td> 
-                        </tr>
-                        <tr> 
-                            <td colspan="2" rowspan="2" class="text-center vc"><p>PASIR RCS</p></td> 
-                            <td colspan="1" class="text-center"><p>A</p></td> 
-                            <td colspan="1" class="p-0">
-                                <p>≤ 1.90</p>
-                            </td> 
+                            <td colspan="1"><p>59±1</p></td> 
                             <td colspan="1" class="p-0">
                                 <p><?= @$siang_jam[4]?>&nbsp;</p>
                             </td> 
@@ -570,13 +556,14 @@ p {
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><?= @$malam_avg[2]?>&nbsp;</p>
-                            </td> 
-                            <td class="b-white" colspan="9" style="border:0px"><p>&nbsp;</p></td> 
+                            </td>  
+                            <td class="b-white" colspan="9"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="1" class="text-center"><p>STR</p></td> 
+                            <td colspan="2" rowspan="2" class="text-center vc"><p>PASIR RCS</p></td> 
+                            <td colspan="1" class="text-center"><p>A</p></td> 
                             <td colspan="1" class="p-0">
-                                <p>≤ 2.2</p>
+                                <p>≤ 1.90</p>
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><?= @$siang_jam[5]?>&nbsp;</p>
@@ -595,6 +582,31 @@ p {
                             </td> 
                             <td colspan="1" class="p-0">
                                 <p><?= @$malam_avg[3]?>&nbsp;</p>
+                            </td> 
+                            <td class="b-white" colspan="9" style="border:0px"><p>&nbsp;</p></td> 
+                        </tr>
+                        <tr> 
+                            <td colspan="1" class="text-center"><p>STR</p></td> 
+                            <td colspan="1" class="p-0">
+                                <p>≤ 2.2</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_jam[6]?>&nbsp;</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_il[6]?>&nbsp;</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><?= @$siang_avg[4]?>&nbsp;</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_jam[6]?>&nbsp;</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_il[6]?>&nbsp;</p>
+                            </td> 
+                            <td colspan="1" class="p-0">
+                                <p><?= @$malam_avg[4]?>&nbsp;</p>
                             </td> 
                             <td  style="border:0px" colspan="9"><p>&nbsp;</p></td> 
                             <td colspan="2" class="text-center"><p>SH</p></td> <td colspan="2" class="text-center"><p>LH</p></td> <td colspan="2" class="text-center"><p>GH</p></td> <td colspan="2" class="text-center"><p>OPR</p></td> 
@@ -628,20 +640,22 @@ p {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php for ($i=0; $i < 27; $i++):?>
+                        <?php $j = 0; foreach($images as $row):?>
                             <tr class="text-center vc">
                                 <td colspan="4" class="p-0">
-                                    <p>hh:mm:ss</p>
+                                    <p><?= $row['hour']?></p>
                                 </td>
-                                <td colspan="8" class="p-0">
+                                <td colspan="8" class="p-2">
+                                    <img src="<?= $row['images']?>" width="200px">
                                 </td>
-                                <td colspan="9" class="p-0">
+                                <td colspan="9" class="p-2">
+                                    <img src="<?= $imageStd?>" width="200px">
                                 </td>
-                                <td colspan="7" class="p-0" style="height:100px;">
-                                    <p></p>
+                                <td colspan="7" class="p-0">
+                                    <textarea name="judgement[]" id="" cols="30" rows="10" class="custom-textarea"><?=@$judgement[$j]?></textarea>
                                 </td>
                             </tr>
-                        <?php endfor;?>
+                        <?php $j++; endforeach; ?>
                     </tbody>
                 </table>
             <!-- 4th Table -->

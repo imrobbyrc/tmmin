@@ -21,6 +21,15 @@ class ReportController extends Public_Controller {
         $this->units = ["°C","°C","°C","°C","mmAq","%","%","mmAq","%","mmAq","%","%","mmAq","%","mmAq"
         ,"%","°C","°C","°C","°C","°C","%","°C","-","-"];
 
+
+        //$this->imagePath = "/var/www/html/cmsv6/assets/backend/images/camera/";
+        //$this->imageStdPath = "/var/www/html/cmsv6/assets/backend/images/";
+
+        $this->imagePath = "C:\laragon\www\\tmmi\cms\camera";
+        $this->imageStdPath = "C:\laragon\www\\tmmi\cms\\visualcheckstd.jpg";
+
+
+
         // check login nanti disini
         // if (!$this->session->userdata('login')) {
         //      redirect('backend/cmsauth');
@@ -76,9 +85,7 @@ class ReportController extends Public_Controller {
                     }
                 }
                 
-            }
-            
-                
+            }   
 
             $dataResult[] = $dataSatuan;
 
@@ -87,7 +94,7 @@ class ReportController extends Public_Controller {
         //Standart Value
         $std = $this->db->query("SELECT param_id, lowval, highval, timestamp FROM furnace_std_val ev WHERE $queryTime")->result_array();
 
-        if(count($std) == 0){ //jika tidak ada std untuk tanggal tersebut, ambil std tanggal terbaru
+        if(count($std) == 0 || count($std) < 21){ //jika tidak ada std untuk tanggal tersebut, ambil std tanggal terbaru
 
             $std = $this->db->query("SELECT param_id, lowval, highval,timestamp FROM furnace_std_val ev ORDER BY timestamp DESC ")->result_array();
 
@@ -118,8 +125,6 @@ class ReportController extends Public_Controller {
             )
         );
         array_splice( $stdResult, 4, 0, $inserted ); //insert array kosong untuk pressure
-
-
 
         //alarm report
         $alarm = $this->db->query("SELECT ed.params_uid, am.alarm_msg, ah.field_val, ah.starttime, ah.endtime  
@@ -203,9 +208,9 @@ class ReportController extends Public_Controller {
             $this->form_validation->set_rules('datetime','Date','required');
             $this->form_validation->set_rules('shift','Shift','required');
             $this->form_validation->set_rules('color','Color','required');
-            //$this->form_validation->set_rules('old_date','Date','required');
 
             $dbData = $this->getData($shift,$datetime);
+            $attachment = $this->getAttachment($shift,$datetime);
             $stdResult = $dbData['standardValue'];
             $alarmResult = $dbData['alarm'];
             $dbResult = $dbData['dataDB'];
@@ -214,6 +219,11 @@ class ReportController extends Public_Controller {
                 //$this->cache->delete($datetime.$shift);
                 $this->cache->save($datetime.$shift,json_encode($_POST)); //save data to cache with key date
             }
+
+            //copy std image from local
+            $pathStd = FCPATH."\assets\\visualcheckstd.jpg";
+            copy($this->imageStdPath,$pathStd);
+
             
             
         }
@@ -233,7 +243,7 @@ class ReportController extends Public_Controller {
         $reportData['units'] = $this->units;
 
         // static content
-        $reportData['pic_names'] = isset($tempFile['pic_names']) ? $tempFile['pic_names'] : '';
+        $reportData['pic_name'] = isset($tempFile['pic_name']) ? $tempFile['pic_name'] : '';
         $reportData['stdlow'] = isset($tempFile['stdlow']) ? $tempFile['stdlow'] : '';
         $reportData['stdhigh'] = isset($tempFile['stdhigh']) ? $tempFile['stdhigh'] : '';
         $reportData['conveying'] = isset($tempFile['conveying']) ? $tempFile['conveying'] : array();
@@ -254,20 +264,27 @@ class ReportController extends Public_Controller {
         $reportData['malam_jam'] = isset($tempFile['malam_jam']) ? $tempFile['malam_jam'] : '';
         $reportData['malam_il'] = isset($tempFile['malam_il']) ? $tempFile['malam_il'] : '';
         $reportData['malam_avg'] = isset($tempFile['malam_avg']) ? $tempFile['malam_avg'] : '';
+        $reportData['judgement'] = isset($tempFile['judgement']) ? $tempFile['judgement'] : array();
 
 
-        if($this->form_validation->run() == FALSE){
-            //redirect($_SERVER['HTTP_REFERER']);
-            $this->load->view('template/header', $this->data_header);
-            $this->load->view('reporting/indexpdf',$reportData); 
-            $this->load->view('template/footer', $this->data_footer);
-        }
+        //attachment
+        $reportData['images'] = isset($attachment) ? $attachment : array();
+        $reportData['imageStd'] = base_url()."assets/visualcheckstd.jpg";
+
+
+        // if($this->form_validation->run() == FALSE){
+         
+        //     $this->load->view('template/header', $this->data_header);
+        //     $this->load->view('reporting/indexpdf',$reportData); 
+        //     $this->load->view('template/footer', $this->data_footer);
+        // }
 
         if($type == 'export'){
 
             $this->cache->delete($datetime.$shift);
 
             $this->pdf->setPaper('A4', 'landscape');
+            $this->pdf->set_option('isRemoteEnabled', TRUE);
             $this->pdf->filename = "report-automation.pdf";
             $this->pdf->load_view('reporting/rpdf', $reportData); 
             //$this->pdf->load_view('reporting/rpdfAttachment', $reportData); 
@@ -284,5 +301,70 @@ class ReportController extends Public_Controller {
 		} 
 
     }
+
+    public function getAttachment($shift,$date)
+    {
+
+        $shift = 1;
+        if($shift == 'malam'){
+            $shift = 2;
+        }
+
+        $result = array();
+        $path = FCPATH."\assets\camera\\".$date."\\".$shift."\\";
+        
+        if(!file_exists($path))
+        {
+            $local = $this->imagePath.'\\'.$date.'\\'.$shift.'\\';
+
+            if(file_exists($local))
+            {
+                mkdir($path, 0777, true);
+                if($handle = opendir($local))
+                {
+                    $images = array();
+                    while (false !== ($entry = readdir($handle))) 
+                    {
+                        if($entry != '..' && $entry != '.')
+                        {
+
+                            $copy = copy($local.$entry, $path.'/'.$entry);
+                            $filename = base_url()."assets/camera/".$date."/".$shift."/".$entry;
+                            $hour = explode(".jpg",$entry);
+                            $images['images'] = $filename;
+                            $images['hour'] = $hour[0];
+
+                            $result[] = $images;
+                        }
+                        
+                    }
+                }
+            }
+
+        }else{
+
+            if($handle = opendir($path))
+            {
+                $images = array();
+                while (false !== ($entry = readdir($handle))) 
+                {
+                    if($entry != '..' && $entry != '.')
+                    {
+                        $hour = explode(".jpg",$entry);
+                        $filename = base_url()."assets/camera/".$date."/".$shift."/".$entry;
+                        $images['images'] = $filename;
+                        $images['hour'] = $hour[0];
+
+                        $result[] = $images;
+                    }
+                    
+                    
+                }
+            }
+        }
+
+        return $result;
+    }
+
     
 }
