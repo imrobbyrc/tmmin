@@ -254,20 +254,16 @@ p {
                         <?php foreach($standardValue as $row):?>
                         <td class="text-right"><p><?= $row['lowval']?>&nbsp;</p></td>
                         <?php endforeach;?>
-                        <!-- <td class="p-0"><p><?= @$stdlow[0]?>&nbsp;</p></td>
-                        <td class="p-0"><p><?= @$stdlow[1]?>&nbsp;</p></td> -->
-                        <td class="p-0 text-center"><p>-</p></td>
-                        <td class="p-0 text-center"><p>-</p></td>
+                        <td class="p-0 text-center"><p><?= $conveyingStd[0]?></p></td>
+                        <td class="p-0 text-center"><p><?= $accumStd[0]?></p></td>
                     </tr>
                     <tr>
                         <td class="text-center"><p><strong>HIGH</strong></p></td>
                         <?php foreach($standardValue as $row):?>
                         <td class="text-right"><p><?= $row['highval']?>&nbsp;</p></td>
                         <?php endforeach;?>
-                        <!-- <td class="p-0"><p><?= @$stdhigh[0]?>&nbsp;</p></td>
-                        <td class="p-0"><p><?= @$stdhigh[1]?>&nbsp;</p></td> -->
-                        <td class="p-0 text-center"><p>-</p></td>
-                        <td class="p-0 text-center"><p>-</p></td>
+                        <td class="p-0 text-center"><p><?= $conveyingStd[1]?></p></td>
+                        <td class="p-0 text-center"><p><?= $accumStd[1]?></p></td>
                     </tr>
                     <?php for ($i = 0 ; $i < count($arrayMaster) ; $i++):?>
                     <tr>
@@ -380,6 +376,7 @@ p {
                                 <p><?= @$alarm_hasil[$i]?>&nbsp;</p>
                             </td>
                         </tr>
+                       
                         <?php $i++ ; endforeach;?>
                         <tr>
                             <td colspan="25" class="text-right"><p><strong>Total Line Stop : </strong></p></td>
@@ -391,7 +388,7 @@ p {
                 <!-- 2nd Table -->
                 
                 <!-- 3rd Table -->
-                <table class="waffle no-grid table" cellspacing="0" cellpadding="0">
+                <table class="waffle no-grid table" cellspacing="0" cellpadding="0" style="page-break-before: always;">
                     <thead>
                         <tr>
                             <?php for ($i=0; $i < 27; $i++):?>
@@ -441,52 +438,52 @@ p {
                     </thead>
                     <tbody> 
                         <tr class="text-center"> 
-                            <td colspan="3"><p><strong>ITEM</strong></p></td> 
-                            <td colspan="1"><p><strong>STD IL</strong></p></td> 
-                            <td colspan="1"><p><strong>JAM</strong></p></td> 
-                            <td colspan="1"><p><strong>IL</strong></p></td> 
-                            <td colspan="1"><p><strong>Rata2</strong></p></td> 
-                            <td colspan="1"><p><strong>JAM</strong></p></td> 
-                            <td colspan="1"><p><strong>IL</strong></p></td> 
-                            <td colspan="1"><p><strong>Rata2</strong></p></td> 
+                            <td colspan="3" class="vc"><p><strong>ITEM</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>STD IL</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>JAM</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>IL</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>Rata2</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>JAM</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>IL</strong></p></td> 
+                            <td colspan="1" class="vc"><p><strong>Rata2</strong></p></td> 
                             <td class="b-white" colspan="17"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR FURNACE</p></td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 vc">
                                 <p>≤ 0.20</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_jam[0]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_il[0]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 vc text-right">
                                 <p><?= @$siang_avg[0]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_jam[0]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_il[0]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 vc text-right">
                                 <p><?= @$malam_avg[0]?>&nbsp;</p>
                             </td>
                             <td class="b-white" colspan="17" style="border-bottom:#000!important"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_jam[1]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_il[1]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_jam[1]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_il[1]?>&nbsp;</p>
                             </td> 
                             <td colspan="9" style="border:0px"><p>&nbsp;</p></td> 
@@ -494,25 +491,25 @@ p {
                         </tr>
                         <tr> 
                             <td colspan="3" rowspan="2" class="text-center vc"><p>PASIR RECLAMER</p></td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 vc">
                                 <p> . 0.13</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_jam[2]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_il[2]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 vc text-right">
                                 <p><?= @$siang_avg[1]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_jam[2]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_il[2]?>&nbsp;</p>
                             </td>
-                            <td colspan="1" rowspan="2" class="p-0 pt-2">
+                            <td colspan="1" rowspan="2" class="p-0 pt-2 vc text-right">
                                 <p><?= @$malam_avg[1]?>&nbsp;</p>
                             </td>
                             <td  style="border:0px" colspan="9"><p>&nbsp;</p></td>  
@@ -522,39 +519,39 @@ p {
                             <td colspan="2" rowspan="4"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_jam[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_il[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_jam[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_il[3]?>&nbsp;</p>
                             </td> 
                             <td class="b-white" colspan="9"><p>&nbsp;</p></td> 
                         </tr>
                         <tr> 
                             <td colspan="3" class="text-center vc"><p>GFN PASIR RECLAMER</p></td>
-                            <td colspan="1"><p>59±1</p></td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="text-center vc"><p>59±1</p></td> 
+                            <td colspan="1" class="p-0 text-right vc">
                                 <p><?= @$siang_jam[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right vc">
                                 <p><?= @$siang_il[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right vc">
                                 <p><?= @$siang_avg[2]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right vc">
                                 <p><?= @$malam_jam[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right vc">
                                 <p><?= @$malam_il[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right vc">
                                 <p><?= @$malam_avg[2]?>&nbsp;</p>
                             </td>  
                             <td class="b-white" colspan="9"><p>&nbsp;</p></td> 
@@ -565,22 +562,22 @@ p {
                             <td colspan="1" class="p-0">
                                 <p>≤ 1.90</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_jam[5]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_il[5]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_avg[3]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_jam[5]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_il[5]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_avg[3]?>&nbsp;</p>
                             </td> 
                             <td class="b-white" colspan="9" style="border:0px"><p>&nbsp;</p></td> 
@@ -590,22 +587,22 @@ p {
                             <td colspan="1" class="p-0">
                                 <p>≤ 2.2</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_jam[6]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_il[6]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$siang_avg[4]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_jam[6]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_il[6]?>&nbsp;</p>
                             </td> 
-                            <td colspan="1" class="p-0">
+                            <td colspan="1" class="p-0 text-right">
                                 <p><?= @$malam_avg[4]?>&nbsp;</p>
                             </td> 
                             <td  style="border:0px" colspan="9"><p>&nbsp;</p></td> 
@@ -613,10 +610,10 @@ p {
                         </tr>
                     </tbody>
                 </table>
-            <!-- 3rd Table -->
+                <!-- 3rd Table -->
 
             
-            <!-- 4th Table -->
+                <!-- 4th Table -->
                 <table class="waffle no-grid table" cellspacing="0" cellpadding="0" style="page-break-before: always;">
                     <thead>
                         <tr>
