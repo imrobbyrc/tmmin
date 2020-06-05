@@ -15,7 +15,7 @@ CacheDisable private /
   RewriteRule ^(.*)$ index.php?/$1 [L] 
   
   # RewriteBase /public_html/
-  # RewriteBase /tmmin/public_html/
+RewriteBase /tmmin/public_html/
   
   #redirect non-www to www
   #redirect all non https requests to SSL

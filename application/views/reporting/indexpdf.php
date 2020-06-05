@@ -704,6 +704,11 @@ p{
                     </thead>
                     <tbody>
                         <tr class="text-center vc" style="border-bottom:2px solid #000;border-right:2px solid #000;border-left:2px solid #000;">
+                            <td colspan="27" class="p-0 vc" style="height:2.5rem;">
+                                <p><h3>LAMPIRAN FOTO SAND VISUAL SAMPLING CHECK</h3></p>
+                            </td>
+                        </tr> 
+                        <tr class="text-center vc" style="border-bottom:2px solid #000;border-right:2px solid #000;border-left:2px solid #000;">
                             <td colspan="4" class="p-0">
                                 <p>Jam</p>
                             </td>

@@ -14,7 +14,7 @@ body { margin: 0px; } */
 }
 .text-left{
     text-align:left !important;
-}
+} 
 input{
     width:100%;
     border:none;  
@@ -146,14 +146,18 @@ p {
     vertical-align: middle !important;
 }
 #header { 
-    position: fixed; left: 0px; top: -92.75px; right: 0px; 
-    height: 150px;
+    position: fixed; left: 0px; top: -90px; right: 0px; 
+    height: 150px; 
 } 
-@page { margin-top: 150px; }
+.hdr > tr > td{
+    border-bottom:0px;
+}
+@page { margin: 15px; }
+@page { margin-top: 115px; }
 </style>   
         <div id="header"> 
                 <table class="waffle no-grid table" cellspacing="0" cellpadding="0">
-                    <thead>
+                    <thead class="hdr">
                         <tr>
                             <?php for ($i=0; $i < 27; $i++):?>
                                 <td style="border-color:#fff!important;border-bottom:#000!important"></td>
@@ -211,13 +215,13 @@ p {
                             <p><strong>ITEM</strong></p>
                             <p><strong>→</strong></p>
                         </td>
-                        <td colspan="12" class="text-center">
+                        <td colspan="12" class="text-center vc">
                             <p><strong>Furnace</strong></p>
                         </td>
-                        <td colspan="7" class="text-center"><p><strong>Sand Cooler</strong></p></td>
-                        <td colspan="3" class="text-center"><p><strong>Gas Cooler</strong></p></td> 
-                        <td rowspan="2" class="text-center"><p><strong>Dust Collector</strong></p></td> 
-                        <td colspan="2" rowspan="2" class="text-center"><p><strong>Pneumatic Conveyor</strong></p></td> 
+                        <td colspan="7" class="text-center vc"><p><strong>Sand Cooler</strong></p></td>
+                        <td colspan="3" class="text-center vc"><p><strong>Gas Cooler</strong></p></td> 
+                        <td rowspan="2" class="text-center vc"><p><strong>Dust Collec</strong></p><p><strong>tor</strong></p></td> 
+                        <td colspan="2" rowspan="2" class="text-center vc"><p><strong>Pneumatic Conveyor</strong></p></td> 
                     </tr>
                     <tr>
                         <td colspan="4" class="text-center vc"><p><strong>TEMPERATURE</strong></p></td>
@@ -622,6 +626,11 @@ p {
                             <?php endfor;?>
                         </tr>
                         <tr class="text-center vc" style="border-bottom:2px solid #000;border-right:2px solid #000;border-left:2px solid #000;">
+                            <td colspan="27" class="p-0 vc" style="height:3rem;">
+                                <p><h3>LAMPIRAN FOTO SAND VISUAL SAMPLING CHECK</h3></p>
+                            </td>
+                        </tr> 
+                        <tr class="text-center vc" style="border-bottom:2px solid #000;border-right:2px solid #000;border-left:2px solid #000;">
                             <td colspan="4" class="p-0">
                                 <p>Jam</p>
                             </td>
@@ -639,17 +648,17 @@ p {
                     <tbody>
                         <?php $j = 0; foreach($images as $row):?>
                             <tr class="text-center vc">
-                                <td colspan="4" class="p-0">
+                                <td colspan="4" class="p-0 vc">
                                     <p><?= $row['hour']?></p>
                                 </td>
-                                <td colspan="8" class="p-2">
+                                <td colspan="8" class="p-2 vc">
                                     <img src="<?= $row['images']?>" width="200px">
                                 </td>
-                                <td colspan="9" class="p-2">
+                                <td colspan="9" class="p-2 vc">
                                     <img src="<?= $imageStd?>" width="200px">
                                 </td>
-                                <td colspan="7" class="p-0">
-                                    <textarea name="judgement[]" id="" cols="30" rows="10" class="custom-textarea"><?=@$judgement[$j]?></textarea>
+                                <td colspan="7" class="text-center vc">
+                                <p><?=@$judgement[$j]?></p>
                                 </td>
                             </tr>
                         <?php $j++; endforeach; ?>
