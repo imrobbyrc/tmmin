@@ -115,6 +115,9 @@ p { font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 p{
     margin-bottom:0px!important;
 }
+textarea {
+ resize: none;
+}
 </style> 
 
 <?php echo validation_errors(); ?>
@@ -367,7 +370,7 @@ p{
                             <?php endfor;?>
                         </tr>
                         <tr class="text-center">
-                            <td rowspan="2" class="vc"><p><strong>No.</strong></p></td>
+                            <td rowspan="2" class="vc text-center"><p><strong>No.</strong></p></td>
                             <td colspan="2"><p><strong>Jam</strong></p></td> 
                             <td rowspan="2" class="vc"><p><strong>Durasi</strong></p></td>
                             <td colspan="6" rowspan="2" class="vc"><p><strong>Alarm Message</strong></p></td>
@@ -724,17 +727,17 @@ p{
                         </tr>
                         <?php $j = 0; foreach($images as $row):?>
                             <tr class="text-center vc">
-                                <td colspan="4" class="p-0">
+                                <td colspan="4" class="p-0 vc">
                                     <p><?= $row['hour']?></p>
                                 </td>
-                                <td colspan="8" class="p-2">
+                                <td colspan="8" class="p-2 vc">
                                     <img src="<?= $row['images']?>" width="200px">
                                 </td>
-                                <td colspan="9" class="p-2">
+                                <td colspan="9" class="p-2 vc">
                                     <img src="<?= $imageStd?>" width="200px">
                                 </td>
-                                <td colspan="7" class="p-0">
-                                    <textarea name="judgement[]" id="" cols="30" rows="10" class="custom-textarea"><?=@$judgement[$j]?></textarea>
+                                <td colspan="7" class="p-0 vc">
+                                    <textarea name="judgement[]" id="" cols="30" rows="10" class="custom-textarea" ><?=@$judgement[$j]?></textarea>
                                 </td>
                             </tr>
                         <?php $j++; endforeach; ?>

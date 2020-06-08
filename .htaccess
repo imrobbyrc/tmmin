@@ -10,7 +10,7 @@ CacheDisable private /
   RewriteRule ^(.*)$ / [R=301,QSD,L] 
   RewriteRule ^(.)'(.)$ $1$2 [R=302,L]   
   # RewriteBase /public_html/
-  RewriteBase /tmmin/public_html/
+  # RewriteBase /tmmin/public_html/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ index.php?/$1 [L] 

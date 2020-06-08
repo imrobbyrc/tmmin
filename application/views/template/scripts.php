@@ -11,11 +11,11 @@
     $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
   } );
   
-  $( function() {
-    $( "#start_prod" ).timepicker({ dateFormat: 'yy-mm-dd' });
-  } );
+  // $( function() {
+  //   $( "#start_prod" ).timepicker({ dateFormat: 'yy-mm-dd' });
+  // } );
  
-  $( function() {
-    $( "#end_prod" ).timepicker({ dateFormat: 'yy-mm-dd' });
-  } );
+  // $( function() {
+  //   $( "#end_prod" ).timepicker({ dateFormat: 'yy-mm-dd' });
+  // } );
 </script>

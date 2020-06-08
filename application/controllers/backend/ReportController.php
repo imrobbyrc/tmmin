@@ -25,11 +25,11 @@ class ReportController extends Public_Controller {
         //$this->imagePath = "/var/www/html/cmsv6/assets/backend/images/camera/";
         //$this->imageStdPath = "/var/www/html/cmsv6/assets/backend/images/";
 
-        $this->imagePath = "C:\\xampp\htdocs\\tmmin\cms\camera";
-        $this->imageStdPath = "C:\\xampp\htdocs\\tmmin\cms\\visualcheckstd.jpg";
+        //$this->imagePath = "C:\\xampp\htdocs\\tmmin\cms\camera";
+        //$this->imageStdPath = "C:\\xampp\htdocs\\tmmin\cms\\visualcheckstd.jpg";
 
-        // $this->imagePath = "C:\laragon\www\\tmmi\cms\camera";
-        // $this->imageStdPath = "C:\laragon\www\\tmmi\cms\\visualcheckstd.jpg";
+        $this->imagePath = "C:\laragon\www\\tmmi\cms\camera";
+        $this->imageStdPath = "C:\laragon\www\\tmmi\cms\\visualcheckstd.jpg";
 
         $this->conveyingStd = ["-","-"];
         $this->accumStd = ["-","-"];
